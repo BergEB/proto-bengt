@@ -1,15 +1,18 @@
 heightMapJPG map;
+hmm defo;
 float x1;
 float xRate;
 float y1;
 float yRate;
 float fat;
 float tall;
+PFont robotoThin;
 
 void setup() {
   size(1000, 600);
   smooth(8);
   map = new heightMapJPG();
+  defo = new hmm();
   x1 = width / 2;
   y1 = height / 2;
   fat = 1.0;
@@ -21,7 +24,9 @@ void setup() {
 void draw() {
   background(0);
   frameRate(20);
+  defo.display();
   if (mousePressed) {
+    defo.display();
     map.create();
     if (keyPressed && keyCode == SHIFT) {
       fill(10);
