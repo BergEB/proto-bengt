@@ -25,19 +25,16 @@ void draw() {
   background(0);
   frameRate(20);
   defo.display();
-  if (mousePressed) {
-    defo.display();
-    map.create();
-    if (keyPressed && keyCode == SHIFT) {
-      fill(10);
-      rect(x1, y1, fat, tall);
-      x1-= xRate;
-      y1-= (6.0 / 10.0) * yRate;
-      fat+= xRate * 2.0;
-      tall+= (6.0 / 10.0) * 2.0 * yRate;
-      yRate = yRate * 1.02;
-      xRate = xRate * 1.02;
-    }
+  map.create();
+  if (keyPressed && keyCode == SHIFT) {
+    fill(10);
+    rect(x1, y1, fat, tall);
+    x1-= xRate;
+    y1-= (6.0 / 10.0) * yRate;
+    fat+= xRate * 2.0;
+    tall+= (6.0 / 10.0) * 2.0 * yRate;
+    yRate = yRate * 1.02;
+    xRate = xRate * 1.02;
   }
   println(frameRate);
 }

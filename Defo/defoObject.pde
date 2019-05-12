@@ -24,7 +24,7 @@ class heightMapJPG {
     for (int y = 0; y < cols; y++) {
       for (int x = 0; x < rows; x++) {
         noStroke();
-        fill(kolor[x][y], 1, 255 - kolor[x][y]);
+        fill(kolor[x][y], 50);
         rect(((float)x * scl) * (width / cols), ((float)y * scl) * (height / rows), (scl + (width / cols)), (scl + (height / rows)));
       }
     }
