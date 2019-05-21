@@ -1,3 +1,4 @@
+
 heightMapJPG map;
 
 void setup() {

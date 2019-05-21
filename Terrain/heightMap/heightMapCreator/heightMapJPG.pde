@@ -6,8 +6,8 @@ class heightMapJPG {
   float[][] kolor;
 
   heightMapJPG() {
-    cols = 800 / scl;
-    rows = 800 / scl;
+    cols = width / scl;
+    rows = height / scl;
     kolor = new float[rows][cols];
   }
   
