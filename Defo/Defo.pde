@@ -23,7 +23,7 @@ void setup() {
 
 void draw() {
   background(0);
-  frameRate(20);
+  frameRate(24);
   defo.display();
   map.create();
   if (keyPressed && keyCode == SHIFT) {

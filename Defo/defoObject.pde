@@ -6,8 +6,8 @@ class heightMapJPG {
   float[][] kolor;
 
   heightMapJPG() {
-    cols = 300;
-    rows = 300;
+    cols = 200;
+    rows = 200;
     kolor = new float[(int)rows][(int)cols];
   }
   
@@ -25,6 +25,7 @@ class heightMapJPG {
       for (int x = 0; x < rows; x++) {
         noStroke();
         fill(kolor[x][y], 50);
+        loadShape("imagles.jpg");
         rect(((float)x * scl) * (width / cols), ((float)y * scl) * (height / rows), (scl + (width / cols)), (scl + (height / rows)));
       }
     }
