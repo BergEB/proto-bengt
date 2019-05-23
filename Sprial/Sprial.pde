@@ -1,27 +1,27 @@
-import peasy.*;
-
-float R = 25;
-float r = 20;
+float R = 1200;
+float s = 0;
 float p = 0;
-PeasyCam cam;
 
 void setup() {
+  lights();
   smooth(8);
-  size(400, 400, P3D);
-  cam = new PeasyCam(this, 0, 0, 200, 800);
-  cam.setMaximumDistance(800);
-  cam.setMinimumDistance(100);
+  fullScreen(P3D);
 }
 
 void draw() {
-  rotateZ(p);
   background(0);
-  stroke(0, 255, 255);
-  fill(0);
-  beginShape(POINTS);
-  for(float t = 0; t < 1450; t+=0.5) {
+  lights();
+  pushMatrix();
+  translate(width / 2, height / 2, -s + 800);
+  s+=1;
+  rotateZ(p);
+  beginShape(TRIANGLE_STRIP);
+  for(float t = 0; t < 1000; t+=1.54) {
+    stroke(150, 0, 0);
+    fill(map(t, 0, 1001, 0, 255));
     vertex(R * cos(t), R * sin(t), t);
   }
   endShape();
-  p+= PI / 2000;
+  popMatrix();
+  p+= PI / 1000;
 }
