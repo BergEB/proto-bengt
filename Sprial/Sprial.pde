@@ -12,7 +12,10 @@ void draw() {
   background(0);
   lights();
   pushMatrix();
-  translate(width / 2, height / 2, -s + 800);
+  if (s > 2000) {
+    s = 0;
+  }
+  translate(width / 2, height / 2, -s + 850);
   s+=1;
   rotateZ(p);
   beginShape(TRIANGLE_STRIP);
@@ -23,5 +26,5 @@ void draw() {
   }
   endShape();
   popMatrix();
-  p+= PI / 1000;
+  p+= PI / 250;
 }
