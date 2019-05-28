@@ -10,6 +10,7 @@ PFont robotoThin;
 
 void setup() {
   size(1000, 600);
+  noCursor();
   smooth(8);
   map = new heightMapJPG();
   defo = new hmm();
@@ -23,9 +24,12 @@ void setup() {
 
 void draw() {
   background(0);
-  frameRate(24);
-  defo.display();
+  //frameRate(25);
   map.create();
+  imageMode(CENTER);
+  //clip((float)(Math.random() * (double)width), (float)(Math.random() * (double)height), (float)(Math.random() * (double)width) + (float)(Math.random() * 100.0), (float)(Math.random() * (double)height) + (float)(Math.random() * 100.0));
+  clip(mouseX, mouseY, (float)(Math.random() * 100) + 150, (float)(Math.random() * 100) + 150);
+  defo.display();
   if (keyPressed && keyCode == SHIFT) {
     fill(10);
     rect(x1, y1, fat, tall);
