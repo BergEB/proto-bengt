@@ -16,4 +16,4 @@ imageMode(CENTER);
  - In the ring.
  - Against professionals!
  
- #* Property of Eronk
+*Property of Eronk
