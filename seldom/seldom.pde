@@ -21,6 +21,7 @@ void draw() {
   //pointLight(50, 50, 50, 800, 200, 800);
   directionalLight(50, 50, 50, 0, 1, -1);
   ambientLight(25, 25, 25);
+  specular(25, 25, 25);
   background(0);
   /*stroke(200, 0, 0);
   line(0, 3000, 0, 0, -3000, 0);

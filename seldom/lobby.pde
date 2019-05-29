@@ -11,7 +11,9 @@ public class lobby {
   }
   
   void walls() {
-    specular(0, 0, 100);
+    if (lightswitch == false) {
+      specular(0, 0, 100);
+    }
     fill(0);
     noStroke();
     translate(800, 400, 800);
@@ -39,17 +41,28 @@ public class lobby {
   }
   
   void callButton() {
+    interact();
     pushMatrix();
     translate(1000, 210, -2);
     box(32, 40, 6);
-    specular(255, 0, 0);
-    shininess(16.0);
-    emissive(0, 0, 0);
+    if (lightswitch) {
+      specular(0, 255, 0);
+      shininess(16.0);
+    }
+    else {
+      specular(255, 0, 0);
+      shininess(16.0);
+    }
     sphere(5);
     popMatrix();
   }
   
   void interact() {
-    
+    if (keyPressed && key == 'e') {
+      lightswitch = false;
+    }
+    if (keyPressed && key == 'r') {
+      lightswitch = true;
+    }
   }
 }

@@ -12,10 +12,15 @@ public class Door {
   
   void frame() {
     pushMatrix();
-    shininess(16.0);
-    emissive(1);
-    specular(0, 0, 100);
-    ambientLight(0, 0, 50);
+    if (l.lightswitch == false) {
+      shininess(16.0);
+      emissive(1);
+      specular(0, 0, 100);
+      ambientLight(0, 0, 50);
+    }
+    else {
+      specular(255, 0, 0);
+    }
     pushMatrix();
     fill(177/2, 129/2, 95/2);
     noStroke();
@@ -36,7 +41,7 @@ public class Door {
   }
   
   void door() {
-    sphereDetail(90);
+    sphereDetail(20);
     pushMatrix();
     fill(177/2, 129/2, 95/2);
     translate(800, 220, 0);
