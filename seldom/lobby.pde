@@ -7,12 +7,12 @@ public class lobby {
   
   void display() {
     walls();
-    callButton();
+    lightSwitch();
   }
   
   void walls() {
     if (lightswitch == false) {
-      specular(0, 0, 100);
+      specular(0, 0, 0);
     }
     fill(0);
     noStroke();
@@ -24,12 +24,20 @@ public class lobby {
     translate(0, -181, 0);
     box(1600, 38, 0);    //far wall
     popMatrix();
-    pushMatrix();
-    translate(-699.0 / 2.0 - 101, 19, 0);
-    box(699, 362, 0);
-    translate(-2.0 * (-699.0 / 2.0 - 101), 0, 0);
-    box(699, 362, 0);
-    popMatrix();
+    if (d.Door) {
+      pushMatrix();
+      translate(-699.0 / 2.0 - 101, 19, 0);
+      box(699, 362, 0);
+      translate(-2.0 * (-699.0 / 2.0 - 101), 0, 0);
+      box(699, 362, 0);
+      popMatrix();
+    }
+    else {
+      pushMatrix();
+      translate(0, 19, 0);
+      box(1600, 362, 0);
+      popMatrix();
+    }
     translate(0, 0, 1600);
     box(1600, 400, 0);    //close wall
     translate(-800, -200, -1600);
@@ -40,29 +48,44 @@ public class lobby {
     translate(-1600, -200, -800);
   }
   
-  void callButton() {
-    interact();
+  void lightSwitch() {
+    if (l.within(1152.0, 530.0, 1186.0, 569.0)) {
+      l.interact();
+    }
     pushMatrix();
     translate(1000, 210, -2);
     box(32, 40, 6);
     if (lightswitch) {
-      specular(0, 255, 0);
-      shininess(16.0);
+      ambient(0, 100, 0);
+      specular(0, 200, 0);
+      rotateX(-PI/5);
     }
     else {
-      specular(255, 0, 0);
-      shininess(16.0);
+      specular(100, 0, 0);
+      rotateX(PI/5);
     }
-    sphere(5);
+    shininess(16.0);
+    box(8, 20, 8);
+    ambient(0, 0, 0);
     popMatrix();
   }
   
   void interact() {
-    if (keyPressed && key == 'e') {
+    if (lightswitch && mousePressed && mouseButton == RIGHT) {
       lightswitch = false;
     }
-    if (keyPressed && key == 'r') {
+    if (!lightswitch && mousePressed && mouseButton == LEFT) {
+      d.Door = true;
       lightswitch = true;
+    }
+  }
+  
+  boolean within(double x1, double y1, double x2, double y2) {
+    if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
+      return true;
+    }
+    else {
+      return false;
     }
   }
 }
