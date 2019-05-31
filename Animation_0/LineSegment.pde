@@ -34,6 +34,21 @@ class LineSegment {
     y8 = height;
   }
   
+  void display() {
+    expand();
+    inverseExpand();
+    rightInverseExpand();
+    leftInverseExpand();
+    limit();
+    inverseLimit();
+    rightInverseLimit();
+    leftInverseLimit();
+    lDisplay();
+    inverseDisplay();
+    rightInverseDisplay();
+    leftInverseDisplay();
+  }
+  
   void expand() {
     x1-= (width / 500.0);
     y2-= (height / 500.0);
@@ -82,7 +97,7 @@ class LineSegment {
     }
   }
   
-  void display() {
+  void lDisplay() {
     stroke(255);
     fill(0);
     line(x1, y1, x2, y2);
