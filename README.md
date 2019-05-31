@@ -53,7 +53,7 @@ void create() {
 
 ## *Built With*
 * [Processing](https://processing.org/) - *The IDE used.*
-* [PeasyCam](mrfeinberg.com/peasycam/) - *Lirary with methods beginHUD() & endHUD() used to draw natural 2-dimensional entities on top of a 3-dimensional (P3D) enviornment.*
+* [PeasyCam](http://mrfeinberg.com/peasycam/) - *Lirary with methods beginHUD() & endHUD() used to draw natural 2-dimensional entities on top of a 3-dimensional (P3D) enviornment.*
 
 ## *Authors*
 * **Erik Bengt Berg** 
