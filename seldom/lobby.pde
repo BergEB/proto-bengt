@@ -49,7 +49,7 @@ public class lobby {
   }
   
   void lightSwitch() {
-    if (l.within(1152.0, 530.0, 1186.0, 569.0)) {
+    if (hud.within(1152.0, 530.0, 1186.0, 569.0)) {
       l.interactLight();
     }
     pushMatrix();
@@ -70,14 +70,7 @@ public class lobby {
     popMatrix();
   }
   
-  boolean within(double x1, double y1, double x2, double y2) {
-    if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
+  
   
   void interactLight() {
     if (l.lightswitch && mousePressed && mouseButton == RIGHT) {

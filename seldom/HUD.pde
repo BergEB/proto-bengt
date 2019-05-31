@@ -7,7 +7,7 @@ public class HUD {
   }
   
   void display() {
-    movements();
+    //movements();
     cursor();
   }
   
@@ -24,7 +24,7 @@ public class HUD {
   }
   
   void interactable(double x1, double y1, double x2, double y2) {
-    if (l.within(x1, y1, x2, y2)) {
+    if (within(x1, y1, x2, y2)) {
       hud.cursorStroke = 200;
       stroke(hud.cursorStroke);
       noFill();
@@ -46,6 +46,15 @@ public class HUD {
       text("^", 0, 0, 50, 50);
       popMatrix();
       cam.endHUD();
+    }
+  }
+  
+  boolean within(double x1, double y1, double x2, double y2) {
+    if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
+      return true;
+    }
+    else {
+      return false;
     }
   }
 }
