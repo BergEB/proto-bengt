@@ -1,34 +1,64 @@
-# ~==~ SELDOM ~==~
+# ~==~***SELDOM***~==~
 
 
-*SELDOM* is a compilation of the most appealing Processing sketches I have created this year, each of which is displayed sequentially within a (generally) static enviormment. These concepts are each displayed within seperate rooms, allowing for the viewer to experience each concept in it's entirety. When running *SELDOM*, the sketch show a dimly lit room with a glowing red lightswitch upon the wall opposite the viewer. The lightswitch can be toggled off/on by clicking on it's offset housing platform. By interacting with the lightswitch, the viewer will eventually find that a shiny red door has appeared to the left of, and along the same wall as, the lightswitch. By toggling the lightswitch off while the door is in existance, the viewer will find the door moving in an usual way. 
+***SELDOM*** is a compilation of the most appealing Processing sketches I have created this year, each of which is individually showcased within a static enviormment. These concepts are each displayed within seperate rooms, allowing for the viewer to experience each concept in it's entirety. When running *SELDOM*, the sketch show a dimly lit room with a glowing red lightswitch upon the wall opposite the viewer. The lightswitch can be toggled off/on by clicking on it's housing platform. By interacting with the lightswitch, the viewer will eventually find that a shiny red door has appeared to the left of the lightswitch along the far wall. By toggling the lightswitch off while the door is in existance, the viewer is able to travel to the next stage of the structure. 
 
-### Difficulties or opportunities you encountered along the way.
+	NOTICE: Enviornment & excerpts are not yet integrated. This will be included in release V.1.0
 
-I decided midway through writing this sketch to make the original area repeat throughout the sketch while varying concepts are displayed and applied to it. This led me to format the entire sketch in a way which allowed me to draw only certain elements based on the viewer's progress through the sketch. I had to reformat most of the classes and their methods, making them individually accessible and dependant on the viewer's progress.
+### ***Impediments***
+I decided midway through writing this sketch to make the original area repeat throughout the structure while varying sketch excerpts are displayed individually per each stage. This led me to format the sketch in a way which allowed me to draw only certain elements based on the viewer's progress through the sketch. I modified most classes and their methods, making each method individually accessible and dependant on the viewer's progress.
 
-### Most interesting piece of your code and explanation for what it does.
+### ***Check this out, Doc***
+```Java
+boolean within(double x1, double y1, double x2, double y2) {
+  if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
+     return true;
+   }
+   else {
+     return false;
+   }
+}
+```
+* This method returns true if the cursor is within a rectangle drawn by the parameters.
+* I used this to create points of available interaction (referred to as hitboxes), indicated to the user by an alternate cursor colorway when within hitbox.
+```Java
+void create() {
+    float yoff = 0;
+    for (int y = 0; y < cols; y++) {
+      float xoff = 0;
+      for (int x = 0; x < rows; x++) {
+        kolor[x][y] = map(noise(xoff, yoff), 0, 1, 0, 255);
+        xoff += scale;
+      }
+      yoff += scale;
+    }
+    for (int y = 0; y < cols; y++) {
+      for (int x = 0; x < rows; x++) {
+        noStroke();
+        fill(kolor[x][y]);
+        rect(x * scl, y * scl, scl, scl);
+      }
+    }
+  }
+```
+* This is from a non-yet implemented sketch excerpt, but it was challenging nevertheless.
+* This uses the noise() method, an adaption of the Perlin Noise mathmatical function, which creates a more naturally distributed randomization than that of Math.random().
+* This creates and saves a JPEG of a resolution equal to the sketch's size. They look similar to ink spots used in psychology.
+* Here is an example of the resulting image: [heightmap.jpg](https://github.com/BergEB/proto-bengt/blob/master/Terrain/heightMap/heightMapCreator/heightmap.jpg)
 
+## *Built With*
+* [Processing](https://processing.org/) - *The IDE used.*
+* [PeasyCam](mrfeinberg.com/peasycam/) - *Lirary with methods beginHUD() & endHUD() used to draw natural 2-dimensional entities on top of a 3-dimensional (P3D) enviornment.*
 
-This is the code that moves down the tree as decisions are made. It gets each value from both left and right and also casts the value to a String. If the progressions arrives at the leaf nodes, those values are printed.
-## Built With
+## *Authors*
+* **Erik Bengt Berg** 
+* **Erik's brain**
 
-* [Processing](https://processing.org/) - The IDE used
-
-## Authors
-
-* **Billie Thompson** 
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
-
-
-
-*paste this into draw method*
-
-imageMode(CENTER);
-  clip((float)(Math.random() * (double)width), (float)(Math.random() * (double)height), (float)(Math.random() * (double)width) + (float)(Math.random() * 100.0), (float)(Math.random() * (double)height) + (float)(Math.random() * 100.0));
+## *Acknowledgments*
+Thank you, ChocolateLab Stella = new Dog, (*happy b-day*)<br />
+Thanks mom. (*who throws a birthday party for a dog?*)<br />
+Obese TY to Office Depot; 24/7 mad lumbar support.<br />
+Thank you, old desk lmap with phalange-cooking bulb.<br />
+This Apple mouse sucks, and thanks Feinberg.<br />
+100%, mouse w/separated right and left click. (*Addy goes hard*)<br />
+Thanks Doc, for telling Yazmine to get off of her phone and pay attention, and also knowledge. (*the phone thing is a lost cause*)
