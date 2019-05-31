@@ -1,7 +1,12 @@
-# ~==~***SELDOM***~==~
+# **=̪̻̮̹̻̭͍̦̪̗̘̣̈͑̓̄̅͋ͯ̋̾̆̊̈́̆̓ͪ͋=̰̥̦̯̻̙͋ͧ̓S̘̖̭̘̙̖̥̖͚̤̘͕̘͙̰͇̺̃͋̓̓ͯ̆ͥ͆ͅE͇̟̜̥̞̪͉̲̖̥̪̫ͧ͌̒̒ͫ͒ͤ̐ͮ͆ͪ̒͐ͯ͆̏ͮL̦͈̝̼̰͍̜̲͎̟͕͚̤͙̬ͣͮ̃̔ͫͪ̂̽͊̂͌ͮͤ̒̚D̮͙̹͍̯̼̗̤͈̦͖̱̗͇͇̺̰̔ͬ͒̇̐̏̊̂͐̇ͨ̐ͮO̟̩̙̳͑̏ͨ̆͂ͩͧ̾̓̈̀ͩ͛̓M̻̻̤̼͙̙̯̞̞͙̜̖͓͓͉̱͗͊͗ͥ̓͂=̝͖̣͖̪̯̳̱͖̥͚̖̰̠ͩ͗ͥ̎̚=̳̯̞̗̩̫̩̜̲͍̺̯̓ͩ̆̄̉̃̂̾**
 
 
-***SELDOM*** is a compilation of the most appealing Processing sketches I have created this year, each of which is individually showcased within a static enviormment. These concepts are each displayed within seperate rooms, allowing for the viewer to experience each concept in it's entirety. When running *SELDOM*, the sketch show a dimly lit room with a glowing red lightswitch upon the wall opposite the viewer. The lightswitch can be toggled off/on by clicking on it's housing platform. By interacting with the lightswitch, the viewer will eventually find that a shiny red door has appeared to the left of the lightswitch along the far wall. By toggling the lightswitch off while the door is in existance, the viewer is able to travel to the next stage of the structure. 
+<br />
+<br />
+<br />
+<br />
+
+***SELDOM*** is a compilation of the most appealing Processing sketches I have created this year, each of which is individually showcased within a static enviormment. These concepts are each displayed within seperate rooms, allowing for the viewer to experience each concept in it's entirety. When running *SELDOM*, the sketch shows a dimly lit room with a glowing red lightswitch upon the wall opposite the viewer. The lightswitch can be toggled off/on by clicking on it's housing platform. By interacting with the lightswitch, the viewer will eventually find that a shiny red door has appeared to the left of the lightswitch along the far wall. By toggling the lightswitch off while the door is in existance, the viewer is able to travel to the next stage of the structure. 
 
 	NOTICE: Enviornment & excerpts are not yet integrated. This will be included in release V.1.0
 
