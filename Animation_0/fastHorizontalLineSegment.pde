@@ -15,6 +15,7 @@ class fastHorizontalLineSegment {
   float y23;
   float x24;
   float y24;
+  
   fastHorizontalLineSegment() {
     x17 = 0;
     y17 = 0;
