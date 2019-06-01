@@ -10,19 +10,13 @@ class Ring {
     y0 = height / 2.0;
   }
   
-  void breathe() {
+  void display() {
     x1-= (width / 250.0);
     y1-= (height / 250.0);
-  }
-  
-  void breathLimit() {
     if (x1 == -width) {
       x1 = width;
       y1 = height;
     }
-  }
-  
-  void ringDisplay() {
     stroke(255);
     fill(0);
     ellipse(x0, y0, x1, y1);
