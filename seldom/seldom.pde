@@ -4,6 +4,7 @@ lobby l;
 Door d;
 PeasyCam cam;
 HUD hud;
+Hallway h;
 
 
 void setup() {
@@ -14,6 +15,7 @@ void setup() {
   l = new lobby();
   d = new Door();
   hud = new HUD();
+  h = new Hallway();
 }
 
 void draw() {
@@ -25,7 +27,9 @@ void draw() {
   background(0);
   noCursor();
   
+  h.display();
   l.display();
   d.display();
   hud.display();
+  println(mouseX + " " + mouseY);
 }

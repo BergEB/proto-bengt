@@ -6,7 +6,7 @@ public class Door {
   Door() {
     A = 0;
     Door = false;
-    doorRate = Math.random() * (PI/100);
+    doorRate = Math.random() * (PI/200) + PI/200;
   }
   
   void display() {
@@ -64,11 +64,13 @@ public class Door {
   }
   
   void ySpin() {
-    if (A > -(3*PI)/5) {
-      A-= doorRate;
-    }
-    else {
-      doorRate = Math.random() * (PI/100);
+    if (hud.stage == 0) {
+      if (A > -(3*PI)/5) {
+        A-= doorRate;
+      }
+      else {
+        doorRate = Math.random() * (PI/100);
+      }
     }
   }
 }
