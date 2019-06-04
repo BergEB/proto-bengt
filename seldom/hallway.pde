@@ -22,6 +22,9 @@ public class Hallway {
       zooming = false;
       hud.stage++;
       hud.stageStart = true;
+      d.Door = false;
+      d.A = 0;
+      l.lightswitch = true;
     }
   }
 }

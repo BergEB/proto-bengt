@@ -17,6 +17,9 @@ public class Door {
   void frame() {
     pushMatrix();
     if (Door) {
+      if (hud.stage == 1) {
+        t0.display();
+      }
       ambientLight(0, 0, 50);
       specular(255, 0, 0);
       shininess(16.0);

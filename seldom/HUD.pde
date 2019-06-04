@@ -11,10 +11,9 @@ public class HUD {
   }
   
   void display() {
-    if (stage == 0) {
-      movements();
-      cursor();
-    }
+    movements();
+    cursor();
+    
   }
   
   void cursor() {
@@ -27,8 +26,8 @@ public class HUD {
         interactable(935.0, 815.0, 985.0, 865.0);
         nextStage();
       }
-      interactable(1152.0, 530.0, 1186.0, 569.0);
     }
+    interactable(1152.0, 530.0, 1186.0, 569.0);
     ellipse(0, 0, 8, 8);
     noStroke();
     popMatrix();
@@ -45,21 +44,23 @@ public class HUD {
   }
   
   void movements() {
-    if (!l.lightswitch && d.A < -(3*PI)/5) {
-      cam.beginHUD();
-      pushMatrix();
-      translate(width/2, 300+height/2 );
-      fill(50, 10, 10);
-      shapeMode(CENTER);
-      stroke(110, 5, 5);
-      rect(0, 0, 50, 50);
-      rectMode(CENTER);
-      textSize(48);
-      textAlign(CENTER, CENTER);
-      fill(255);
-      text("^", 0, 0, 100, 100);
-      popMatrix();
-      cam.endHUD();
+    if (stage == 0) {
+      if (!l.lightswitch && d.A < -(3*PI)/5) {
+        cam.beginHUD();
+        pushMatrix();
+        translate(width/2, 300+height/2 );
+        fill(50, 10, 10);
+        shapeMode(CENTER);
+        stroke(110, 5, 5);
+        rect(0, 0, 50, 50);
+        rectMode(CENTER);
+        textSize(48);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("^", 0, 0, 100, 100);
+        popMatrix();
+        cam.endHUD();
+      }
     }
   }
   
