@@ -1,8 +1,6 @@
 public class HUD {
   private float cursorStroke;
-  private int stage;
   private int fade;
-  private boolean stageStart;
   
   HUD() {
     stage = 0;
@@ -64,22 +62,6 @@ public class HUD {
     }
   }
   
-  boolean within(double x1, double y1, double x2, double y2) {
-    if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-  
-  void nextStage() {
-    if (within(935.0, 815.0, 985.0, 865.0)) {
-      if (mousePressed && mouseButton == LEFT) {
-        h.zooming = true;
-      }
-    }
-  }
   
   void fadeIn() {
     if (stageStart) {

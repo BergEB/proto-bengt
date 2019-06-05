@@ -17,7 +17,7 @@ public class Door {
   void frame() {
     pushMatrix();
     if (Door) {
-      if (hud.stage == 1) {
+      if (stage == 1) {
         t0.display();
       }
       ambientLight(0, 0, 50);
@@ -52,10 +52,7 @@ public class Door {
       fill(177/2, 129/2, 95/2);
       translate(800, 220, 0);
       translate(0, -180, -4);
-      if (l.lightswitch == false && Door) {
-        ySpin();
-      }
-      rotateX(A);
+      open();
       translate(0, 180, 4);
       box(200, 360, 5);
       translate(90, 20, 8);
@@ -66,14 +63,17 @@ public class Door {
     }
   }
   
-  void ySpin() {
-    if (hud.stage == 0) {
+  void open() {
+    if (l.lightswitch == false && Door) {
       if (A > -(3*PI)/5) {
         A-= doorRate;
       }
       else {
         doorRate = Math.random() * (PI/100);
       }
+    }
+    if (stage == 0) {
+      rotateX(A);
     }
   }
 }

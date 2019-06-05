@@ -49,7 +49,7 @@ public class lobby {
   }
   
   void lightSwitch() {
-    if (hud.within(1152.0, 530.0, 1186.0, 569.0)) {
+    if (within(1152.0, 530.0, 1186.0, 569.0)) {
       l.interactLight();
     }
     pushMatrix();
