@@ -72,3 +72,4 @@ Thank you, old desk lmap with phalange-cooking bulb.<br />
 This Apple mouse sucks, and thanks Feinberg.<br />
 100%, mouse w/separated right and left click. (*Addy goes hard*)<br />
 Thanks Doc, for telling Yazmine to get off of her phone and pay attention, and also knowledge. (*the phone thing is a lost cause*)
+And most of all, Thank You to Read S. for encouraging the ascent by being a role model who can make computers go beep boop n shit!
