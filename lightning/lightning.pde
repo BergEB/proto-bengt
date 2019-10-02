@@ -44,9 +44,13 @@ void draw() {
 
 void mousePressed() {
   startX = mouseX;
+  nstartX = mouseX;
   startY = mouseY;
+  nstartY = mouseY;
   endX = targetX;
+  nendX = targetX;
   endY = targetY;
+  nendY = targetY;
 }
 
 class target {
