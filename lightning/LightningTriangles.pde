@@ -14,7 +14,6 @@ float triH;
 float triFarLeg;
 float triHorizontalLeg;
 float triAngle;
-float angleMult;
 target circle;
 
 void setup() {
@@ -35,7 +34,6 @@ void setup() {
   triFarLeg = Math.abs(400 - mouseY);
   triHorizontalLeg = Math.abs(400 - mouseX);
   triAngle = atan((mouseX - endX) / (mouseY - endY));
-  angleMult = (90 / (PI / 2));
   circle = new target();
   strokeWeight(1);
 }
@@ -48,8 +46,16 @@ void draw() {
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
   triFarLeg = Math.abs(400 - mouseY);
   triHorizontalLeg = Math.abs(400 - mouseX);
-  angleMult = (90 / (PI / 2));
-  triAngle = (atan(triY / triX) * angleMult);
+  triAngle = radians(atan(triY / triX) * angleMult);
+  if (triX < 0 && triY > 0) {
+    triAngle = (triAngle * -1) + 90;
+  }
+  else if (triX < 0 && triY < 0) {
+    triAngle = triAngle + 180;
+  }
+  else if (triX > 0 && triY < 0) {
+    triAngle = (triAngle * -1) + 270;
+  }
   stroke((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
   stroke(255);
   strokeWeight(1);
@@ -62,7 +68,7 @@ void draw() {
   fill(255);
   text("X: " + triX, 50, 690);
   text("Y: " + triY, 50, 720);
-  text("Angle: " + triAngle * PI * 18, 50, 750);
+  text("Angle: " + triAngle, 50, 750);
   
   if (mousePressed) {
     mousePressed();
