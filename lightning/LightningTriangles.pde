@@ -62,9 +62,9 @@ void draw() {
   vertex(mouseX, mouseY);
   endShape(CLOSE);
   fill(255);
-  text("X: " + triX, 50, 690);
-  text("Y: " + triY, 50, 720);
-  text("Angle: " + triAngle, 50, 750);
+  text("X: " + triX, 30, 700);
+  text("Y: " + triY, 30, 725);
+  text("Angle: " + triAngle, 30, 750);
   
   if (mousePressed) {
     mousePressed();
