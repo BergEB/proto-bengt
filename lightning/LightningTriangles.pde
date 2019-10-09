@@ -31,8 +31,6 @@ void setup() {
   triX = mouseX - endX;
   triY = endY - mouseY;
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
-  triFarLeg = Math.abs(400 - mouseY);
-  triHorizontalLeg = Math.abs(400 - mouseX);
   triAngle = atan((mouseX - endX) / (mouseY - endY));
   circle = new target();
   strokeWeight(1);
@@ -44,8 +42,6 @@ void draw() {
   triX = mouseX - endX;
   triY = endY - mouseY;
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
-  triFarLeg = Math.abs(400 - mouseY);
-  triHorizontalLeg = Math.abs(400 - mouseX);
   triAngle = radians(atan(triY / triX));
   if (triX < 0 && triY > 0) {
     triAngle = (triAngle * -1) + 90;
