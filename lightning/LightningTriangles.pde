@@ -78,14 +78,14 @@ class lightningBolt {
     triY = nendY - mouseY;
     triH = (float)Math.sqrt((triX * triX) + (triY * triY));
     triAngle = degrees(atan(triY / triX));
-    if (triX < 0 && triY > 0) {
-      triAngle = triAngle + 180;
+    if (triX < 0.0 && triY > 0.0) {
+      triAngle = triAngle + 180.0;
     }
-    else if (triX < 0 && triY < 0) {
-      triAngle = triAngle + 180;
+    else if (triX < 0.0 && triY < 0.0) {
+      triAngle = triAngle + 180.0;
     }
-    else if (triX > 0 && triY < 0) {
-      triAngle = triAngle + 360;
+    else if (triX > 0.0 && triY < 0.0) {
+      triAngle = triAngle + 360.0;
     }
     else if (triX == 0 && triY > 0) {
       triAngle = 90.0; 
@@ -110,7 +110,9 @@ class lightningBolt {
     pushMatrix();
     translate(400, 400);
     rotate(radians(-triAngle));
+    translate(0, 400 - mouseY);
     stroke((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
+    startX = (float)Math.sqrt(sq(400.0 - mouseX) + sq(400.0 - mouseY));
     while (endX > 10) {
       endX = startX - ((float)(Math.random() * 10));
       endY = startY - ((float)(Math.abs(Math.random() * 21) - 9));
