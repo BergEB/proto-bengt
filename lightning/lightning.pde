@@ -12,6 +12,7 @@ float triH;
 float triFarLeg;
 float triHorizontalLeg;
 float triAngle;
+float nTriAngle;
 lightningBolt bolt;
 tesla t;
 tesla t0;
@@ -23,10 +24,10 @@ void setup() {
   t.bounds(800, 800);
   t0 = new tesla();
   t0.bounds(800, 800);
-  startX = t.teslaX - 400;
-  nstartX = t.teslaX - 400;
-  startY = t.teslaY - 400;
-  nstartY = t.teslaY - 400;
+  startX = t.teslaX;
+  nstartX = t.teslaX;
+  startY = t.teslaY;
+  nstartY = t.teslaY;
   endX = t0.teslaX;
   nendX = t0.teslaX;
   endY = t0.teslaY;
@@ -35,6 +36,7 @@ void setup() {
   triY = endY - t.teslaY;
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
   triAngle = degrees(atan(triY / triX));
+  nTriAngle = atan(triY / triX);
   strokeWeight(1);
 }
 
@@ -44,10 +46,10 @@ void draw() {
   t.bounds(800, 800);
   t0.display();
   t0.bounds(800, 800);
-  startX = t.teslaX - 400;
-  nstartX = t.teslaX - 400;
-  startY = t.teslaY - 400;
-  nstartY = t.teslaY - 400;
+  startX = t.teslaX;
+  nstartX = t.teslaX;
+  startY = t.teslaY;
+  nstartY = t.teslaY;
   endX = t0.teslaX;
   nendX = t0.teslaX;
   endY = t0.teslaY;
@@ -55,8 +57,10 @@ void draw() {
   bolt.calc();
   bolt.display();
   fill(255);
-  text("X1: " + triX, 30, 700);
-  text("Y1: " + triY, 30, 725);
+  text("X1: " + triX, 30, 650);
+  text("Y1: " + triY, 30, 675);
+  text("X2: " + triX, 30, 700);
+  text("Y2: " + triY, 30, 725);
   text("Angle: " + triAngle, 30, 750);
 }
 
@@ -79,10 +83,10 @@ class tesla {
   }
   
   void bounds(int x, int y) {
-    if (teslaX - 10 > x || teslaX - 10 < 0) {
+    if (teslaX + 10 > x || teslaX < 10) {
       accelX*= -1;
     }
-    if (teslaY - 10 > y || teslaY - 10 < 0) {
+    if (teslaY + 10 > y || teslaY < 10) {
       accelY*= -1;
     }
     teslaX+= accelX;
@@ -96,8 +100,16 @@ class lightningBolt {
   }
   
   void calc() {
-    triX = t.teslaX - nendX;
-    triY = nendY - t.teslaY;
+    startX = t.teslaX;
+    nstartX = t.teslaX;
+    startY = t.teslaY;
+    nstartY = t.teslaY;
+    endX = t0.teslaX;
+    nendX = t0.teslaX;
+    endY = t0.teslaY;
+    nendY = t0.teslaY;
+    triX = t.teslaX - endX;
+    triY = endY - t.teslaY;
     triH = (float)Math.sqrt((triX * triX) + (triY * triY));
     triAngle = degrees(atan(triY / triX));
     if (triX < 0.0 && triY > 0.0) {
@@ -132,6 +144,7 @@ class lightningBolt {
     pushMatrix();
     translate(t0.teslaX, t0.teslaY);
     rotate(radians(-triAngle));
+    translate(0, 0);
     stroke((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
     startX = (float)Math.sqrt(sq(t0.teslaX - t.teslaX) + sq(t0.teslaY - t.teslaY));
     while (endX > 10) {
