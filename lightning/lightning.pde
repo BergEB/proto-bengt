@@ -6,70 +6,58 @@ float endX;
 float nendX;
 float endY;
 float nendY;
-float targetX;
-float targetY;
 float triX;
 float triY;
 float triH;
 float triFarLeg;
 float triHorizontalLeg;
 float triAngle;
-target circle;
 lightningBolt bolt;
 tesla t;
+tesla t0;
 
 void setup() {
   size(800, 800);
   bolt = new lightningBolt();
   t = new tesla();
-  targetX = 400;
-  targetY = 400;
+  t.bounds(800, 800);
+  t0 = new tesla();
+  t0.bounds(800, 800);
   startX = t.teslaX - 400;
   nstartX = t.teslaX - 400;
   startY = t.teslaY - 400;
   nstartY = t.teslaY - 400;
-  endX = targetX;
-  nendX = targetX;
-  endY = targetY;
-  nendY = targetY;
+  endX = t0.teslaX;
+  nendX = t0.teslaX;
+  endY = t0.teslaY;
+  nendY = t0.teslaY;
   triX = t.teslaX - endX;
   triY = endY - t.teslaY;
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
   triAngle = degrees(atan(triY / triX));
-  circle = new target();
   strokeWeight(1);
 }
 
 void draw() {
   background(0);
-  t.bounds(800, 800);
   t.display();
+  t.bounds(800, 800);
+  t0.display();
+  t0.bounds(800, 800);
   startX = t.teslaX - 400;
   nstartX = t.teslaX - 400;
   startY = t.teslaY - 400;
   nstartY = t.teslaY - 400;
-  endX = targetX;
-  nendX = targetX;
-  endY = targetY;
-  nendY = targetY;
-  circle.display();
+  endX = t0.teslaX;
+  nendX = t0.teslaX;
+  endY = t0.teslaY;
+  nendY = t0.teslaY;
   bolt.calc();
   bolt.display();
   fill(255);
-  text("X: " + triX, 30, 700);
-  text("Y: " + triY, 30, 725);
+  text("X1: " + triX, 30, 700);
+  text("Y1: " + triY, 30, 725);
   text("Angle: " + triAngle, 30, 750);
-}
-
-class target {
-  
-  target() {
-  }
-  
-  void display() {
-    fill(255);
-    ellipse(targetX, targetY, 30, 30);
-  }
 }
 
 class tesla {
@@ -132,21 +120,20 @@ class lightningBolt {
     }
     stroke(255);
     strokeWeight(1);
-    fill(0);
+    noFill();
     beginShape();
-    vertex(400, 400);
-    vertex(t.teslaX, 400);
+    vertex(t0.teslaX, t0.teslaY);
+    vertex(t.teslaX, t0.teslaY);
     vertex(t.teslaX, t.teslaY);
     endShape(CLOSE);
   }
   
   void display() {
     pushMatrix();
-    translate(400, 400);
+    translate(t0.teslaX, t0.teslaY);
     rotate(radians(-triAngle));
-    translate(0, 400 - t.teslaY);
     stroke((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
-    startX = (float)Math.sqrt(sq(400.0 - t.teslaX) + sq(400.0 - t.teslaY));
+    startX = (float)Math.sqrt(sq(t0.teslaX - t.teslaX) + sq(t0.teslaY - t.teslaY));
     while (endX > 10) {
       endX = startX - ((float)(Math.random() * 10));
       endY = startY - ((float)(Math.abs(Math.random() * 21) - 10));
@@ -155,5 +142,6 @@ class lightningBolt {
       startY = endY;
     }
     popMatrix();
+    
   }
 }
