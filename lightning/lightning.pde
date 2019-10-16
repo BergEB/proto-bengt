@@ -32,8 +32,8 @@ void setup() {
   nendX = t0.teslaX;
   endY = t0.teslaY;
   nendY = t0.teslaY;
-  triX = t.teslaX - endX;
-  triY = endY - t.teslaY;
+  triX = Math.abs(t.teslaX - endX);
+  triY = Math.abs(endY - t.teslaY);
   triH = (float)Math.sqrt((triX * triX) + (triY * triY));
   triAngle = degrees(atan(triY / triX));
   nTriAngle = atan(triY / triX);
@@ -57,10 +57,10 @@ void draw() {
   bolt.calc();
   bolt.display();
   fill(255);
-  text("X1: " + triX, 30, 650);
-  text("Y1: " + triY, 30, 675);
-  text("X2: " + triX, 30, 700);
-  text("Y2: " + triY, 30, 725);
+  text("X1: " + t.teslaX, 30, 650);
+  text("Y1: " + t.teslaY, 30, 675);
+  text("X2: " + t0.teslaX, 30, 700);
+  text("Y2: " + t0.teslaY, 30, 725);
   text("Angle: " + triAngle, 30, 750);
 }
 
