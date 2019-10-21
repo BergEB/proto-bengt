@@ -1,22 +1,46 @@
-snowFlake [] s = new snowFlake[1000];
+terrain world;
+player p1;
 
 void setup() {
-  size(800, 800, P2D);
-  for (int i = 0; i < s.length; i++) {
-    s[i] = new snowFlake();
-  }
+  world = new terrain();
+  p1 = new player();
 }
 
 void draw() {
-  if (!mousePressed) {
-    background(0);
+
+}
+
+class terrain {
+  
+  terrain() {
   }
-  if (!mousePressed) {
-    background(255);
+  
+  void display() {
   }
-  for (int i = 0; i < s.length; i++) {
-    s[i].display();
-    s[i].move();
-    s[i].buildUp();
+  
+  void hitboxes() {
   }
+
+  void rise() {
+  }
+  
+  void spiral() {
+  }
+  
+}
+
+class player {
+  float X;
+  float Y;
+  float Z;
+  
+  player() {
+    X = 0;
+    Y = 0;
+    Z = 50;
+  }
+  
+  void display() {
+  }
+  
 }
