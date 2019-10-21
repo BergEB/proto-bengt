@@ -18,12 +18,12 @@ class Terrain {
   private float X;
   private float Y;
   private float Z;
-  private float hitboxX1
-  private float hitboxX2
-  private float hitboxY1
-  private float hitboxY2
-  private float hitboxZ1
-  private float hitboxZ2
+  private float hitboxX1;
+  private float hitboxX2;
+  private float hitboxY1;
+  private float hitboxY2;
+  private float hitboxZ1;
+  private float hitboxZ2;
   
   Terrain(float x, float y, float z, float xPos, float yPos, float zPos) {
     width = x;
@@ -61,12 +61,12 @@ class Player {
   private float playerX;
   private float playerY;
   private float playerZ;
-  private float hitboxX1
-  private float hitboxX2
-  private float hitboxY1
-  private float hitboxY2
-  private float hitboxZ1
-  private float hitboxZ2
+  private float hitboxX1;
+  private float hitboxX2;
+  private float hitboxY1;
+  private float hitboxY2;
+  private float hitboxZ1;
+  private float hitboxZ2;
   
   Player() {
   }
@@ -125,6 +125,5 @@ class Physics {
       }
     }
   }
-  
   
 }  
