@@ -58,9 +58,9 @@ class Terrain {
 }
 
 class Player {
-  private float playerX;
-  private float playerY;
-  private float playerZ;
+  private float X;
+  private float Y;
+  private float Z;
   private float hitboxX1;
   private float hitboxX2;
   private float hitboxY1;
@@ -93,13 +93,15 @@ class Player {
 
 class Physics {
   private float gravity;
+  private float gAcc;
  
   Physics() {
-    gravity = -98.0;
+    gravity = 0;
+    gAcc = 1;
   }
   
   void gravity() {
-    
+    p1.Y
   }
   
   void collision() {
