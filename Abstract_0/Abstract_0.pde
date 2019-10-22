@@ -103,10 +103,10 @@ class Physics {
   }
   
   void collision() {
-    if (p1.hitboxY1 < world.hitboxY1) {
+    if (p1.hitboxY2 < world.hitboxY1) {
       p1.Y+= world.hitboxY1 - p1.hitboxY1;
     }
-    if (p1.hitboxY2 > world.hitboxY2) {
+    if (p1.hitboxY1 > world.hitboxY2) {
       p1.Y-= p1.hitboxY2 - world.hitboxY2;
     }
   //distance formula with Math.abs for the differences between player X and column X & player Y and column Y
