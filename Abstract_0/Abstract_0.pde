@@ -36,7 +36,7 @@ class Terrain {
   
   void display() {
     fill(255);
-    translate(X, Y, Z);
+    translate(xPos, yPos, zPos);
     box(width, height, length);
   }
    
@@ -86,6 +86,21 @@ class Player {
     hitboxZ2 = Z + (z / 2);
   }
   
+  void jump() {
+    if (keyPressed() == true && keyPressed == SPACE) {
+      
+    }
+  }
+  
+  boolean falling() {
+    if (p1.hitboxY2 > world.hitboxY1) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  }
+  
   void display() {
   }
   
@@ -101,7 +116,7 @@ class Physics {
   }
   
   void gravity() {
-    p1.Y
+    //p1.Y
   }
   
   void collision() {
