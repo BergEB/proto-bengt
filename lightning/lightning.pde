@@ -83,10 +83,10 @@ class tesla {
   }
   
   void bounds(int x, int y) {
-    if (teslaX + 10 > x || teslaX < 10) {
+    if (teslaX + 15 > x || teslaX < 15) {
       accelX*= -1;
     }
-    if (teslaY + 10 > y || teslaY < 10) {
+    if (teslaY + 15 > y || teslaY < 15) {
       accelY*= -1;
     }
     teslaX+= accelX;
@@ -135,18 +135,22 @@ class lightningBolt {
     noFill();
     beginShape();
     vertex(t0.teslaX, t0.teslaY);
-    vertex(t.teslaX, t0.teslaY);
     vertex(t.teslaX, t.teslaY);
+    stroke(0, 255, 0);
+    vertex(t.teslaX, t0.teslaY);
     endShape(CLOSE);
+    stroke(255, 0, 0);
+    line(t.teslaX, t.teslaY, t0.teslaX, t0.teslaY);
   }
   
   void display() {
     pushMatrix();
     translate(t0.teslaX, t0.teslaY);
     rotate(radians(-triAngle));
-    translate(0, 0);
+    translate(0, -t.teslaY);
     stroke((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
     startX = (float)Math.sqrt(sq(t0.teslaX - t.teslaX) + sq(t0.teslaY - t.teslaY));
+    strokeWeight(2);
     while (endX > 10) {
       endX = startX - ((float)(Math.random() * 10));
       endY = startY - ((float)(Math.abs(Math.random() * 21) - 10));
