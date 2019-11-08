@@ -1,10 +1,11 @@
 class heightMapObject {
   private float[][] terrain;
-  int scl = 8;
+  int scl = 2;
   int cols;
   int rows;
   int peakX;
   int peakY;
+  float r;
   PImage heightmap;
   int index(int x, int y) {
   return x + y * heightmap.width;
@@ -13,6 +14,7 @@ class heightMapObject {
   heightMapObject() {
     cols = 800 / scl;
     rows = 800 / scl;
+    r = 0;
     terrain = new float[rows][cols];
     heightmap = loadImage("heightmap.jpg");
     heightmap.resize(800, 800);
@@ -20,8 +22,13 @@ class heightMapObject {
     
   void display() {
     pushMatrix();
-    translate(800, 200, 1000);
+    translate(400, -200, -1000);
     noStroke();
+    rotateX(PI / 4);
+    translate(400, 400, 0);
+    rotateZ(r);
+    translate(-400, -400, 0);
+    r+= PI / 800;
     for (int y = 0; y < cols - 1; y++) {
       beginShape(TRIANGLE_STRIP);
       for (int x = 0; x < rows; x++) {

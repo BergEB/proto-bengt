@@ -72,8 +72,7 @@ public class Door {
         doorRate = Math.random() * (PI/100);
       }
     }
-    if (stage == 0) {
-      rotateX(A);
-    }
+    rotateX(A);
+    
   }
 }
