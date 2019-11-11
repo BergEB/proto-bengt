@@ -22,7 +22,7 @@ class heightMapObject {
     
   void display() {
     pushMatrix();
-    translate(400, -200, -1000);
+    translate(400, -100, -1000);
     noStroke();
     rotateX(PI / 4);
     translate(400, 400, 0);
