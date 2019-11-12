@@ -1,11 +1,12 @@
 import peasy.*;
+//import queasycam.*;
 
 private int stage;
 private boolean stageStart;
-
 lobby l;
 Door d;
 PeasyCam cam;
+//QueasyCam qCam;
 HUD hud;
 Hallway h;
 defoText text1;
@@ -21,6 +22,7 @@ float viewZ = 800;
 
 void setup() {
   fullScreen(P3D);
+  //size(1000, 1000, P3D);
   frameRate(60);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
@@ -37,6 +39,14 @@ void setup() {
   polySeven = new TriaFlow(7);
   text1 = new defoText();
   t0.declare();
+  /*
+  qCam = new QueasyCam(this);
+  qCam.position.x = viewX;
+  qCam.position.y = viewY;
+  qCam.position.z = viewZ;
+  qCam.pan-= PI / 2;
+  */
+  hint(ENABLE_STROKE_PERSPECTIVE);
 }
 
 void draw() {
@@ -52,10 +62,9 @@ void draw() {
   l.display();
   d.display();
   hud.display();
-  println(mouseX + " " + mouseY);
 }
   
-boolean within(double x1, double y1, double x2, double y2) {
+boolean mouseWithin(double x1, double y1, double x2, double y2) {
   if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
     return true;
   }
@@ -65,7 +74,7 @@ boolean within(double x1, double y1, double x2, double y2) {
 }
 
 void nextStage() {
-  if (within(935.0, 815.0, 985.0, 865.0)) {
+  if (mouseWithin(935.0, 815.0, 985.0, 865.0)) {
     if (mousePressed && mouseButton == LEFT) {
       h.zooming = true;
     }

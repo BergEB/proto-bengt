@@ -49,7 +49,7 @@ public class lobby {
   }
   
   void lightSwitch() {
-    if (within(1152.0, 530.0, 1186.0, 569.0) && !h.zooming) {
+    if (mouseWithin(1152.0, 530.0, 1186.0, 569.0) && !h.zooming) {
       l.interactLight();
     }
     pushMatrix();

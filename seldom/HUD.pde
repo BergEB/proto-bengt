@@ -11,28 +11,39 @@ public class HUD {
   void display() {
     movements();
     cursor();
+    //cursor3D();
     
   }
   
   void cursor() {
-    cam.beginHUD();
+    hint(DISABLE_DEPTH_TEST);
     pushMatrix();
+    noLights();
     translate(mouseX, mouseY);
-    fill(200);
     if (!l.lightswitch && d.A < -(3*PI)/5) {
       interactable(935.0, 815.0, 985.0, 865.0);
       nextStage();
     }
-    interactable(1152.0, 530.0, 1186.0, 569.0);
+    interactable(1152.0, 530.0 , 1186.0, 569.0);
+    fill(200);
     ellipse(0, 0, 8, 8);
     noStroke();
     popMatrix();
-    cam.endHUD();
     fadeIn();
+    hint(ENABLE_DEPTH_TEST);
+  }
+  
+  void cursor3D() {
+    pushMatrix();
+    translate(width / 2, height / 2);
+    fill(200);
+    noStroke();
+    ellipse(0, 0, 8, 8);
+    popMatrix();
   }
   
   void interactable(double x1, double y1, double x2, double y2) {
-    if (within(x1, y1, x2, y2) && !h.zooming) {
+    if (mouseWithin(x1, y1, x2, y2) && !h.zooming) {
       hud.cursorStroke = 200;
       strokeWeight(1.5);
       stroke(hud.cursorStroke);
@@ -73,7 +84,6 @@ public class HUD {
       else {
         fade = 255;
         stageStart = false;
-        clear();
       }
     }
   }
