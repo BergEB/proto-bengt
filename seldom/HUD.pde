@@ -16,21 +16,22 @@ public class HUD {
   }
   
   void cursor() {
-    hint(DISABLE_DEPTH_TEST);
+    cam.beginHUD();
     pushMatrix();
     noLights();
+    fill(200);
     translate(mouseX, mouseY);
-    if (!l.lightswitch && d.A < -(3*PI)/5) {
+    if (!l.lightswitch && d.A <= -(3*PI)/5) {
       interactable(935.0, 815.0, 985.0, 865.0);
       nextStage();
     }
     interactable(1152.0, 530.0 , 1186.0, 569.0);
-    fill(200);
     ellipse(0, 0, 8, 8);
     noStroke();
     popMatrix();
     fadeIn();
-    hint(ENABLE_DEPTH_TEST);
+    println(mouseX, mouseY);
+    cam.endHUD();
   }
   
   void cursor3D() {
