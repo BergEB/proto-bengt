@@ -6,7 +6,7 @@ public class Door {
   Door() {
     A = 0;
     Door = false;
-    doorRate = Math.random() * (PI/200) + PI/200;
+    doorRate = PI/200;
   }
   
   void display() {
@@ -18,6 +18,21 @@ public class Door {
     pushMatrix();
     if (Door) {
       if (stage == 1) {
+        polyThree.display();
+      }
+      if (stage == 2) {
+        polyFour.display();
+      }
+      if (stage == 3) {
+        polyFive.display();
+      }
+      if (stage == 4) {
+        polySix.display();
+      }
+      if (stage == 5) {
+        polySeven.display();
+      }
+      if (stage == 6) {
         t0.display();
       }
       ambientLight(0, 0, 50);
@@ -67,9 +82,6 @@ public class Door {
     if (l.lightswitch == false && Door) {
       if (A > -(3*PI)/5) {
         A-= doorRate;
-      }
-      else {
-        doorRate = Math.random() * (PI/100);
       }
     }
     rotateX(A);

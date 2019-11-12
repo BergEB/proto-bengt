@@ -10,6 +10,11 @@ HUD hud;
 Hallway h;
 defoText text1;
 heightMapObject t0;
+TriaFlow polyThree;
+TriaFlow polyFour;
+TriaFlow polyFive;
+TriaFlow polySix;
+TriaFlow polySeven;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
@@ -25,6 +30,11 @@ void setup() {
   hud = new HUD();
   h = new Hallway();
   t0 =  new heightMapObject();
+  polyThree = new TriaFlow(3);
+  polyFour = new TriaFlow(4);
+  polyFive = new TriaFlow(5);
+  polySix = new TriaFlow(6);
+  polySeven = new TriaFlow(7);
   text1 = new defoText();
   t0.declare();
 }

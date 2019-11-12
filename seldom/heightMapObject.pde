@@ -1,6 +1,6 @@
 class heightMapObject {
   private float[][] terrain;
-  int scl = 2;
+  int scl = 4;
   int cols;
   int rows;
   int peakX;

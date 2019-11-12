@@ -32,7 +32,7 @@ public class HUD {
   }
   
   void interactable(double x1, double y1, double x2, double y2) {
-    if (within(x1, y1, x2, y2)) {
+    if (within(x1, y1, x2, y2) && !h.zooming) {
       hud.cursorStroke = 200;
       strokeWeight(1.5);
       stroke(hud.cursorStroke);
@@ -41,7 +41,7 @@ public class HUD {
   }
   
   void movements() {
-    if (!l.lightswitch && d.A < -(3*PI)/5) {
+    if (!l.lightswitch && d.A < -(3*PI)/5 && !h.zooming) {
       cam.beginHUD();
       pushMatrix();
       translate(width/2, 300+height/2 );
