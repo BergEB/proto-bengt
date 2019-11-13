@@ -35,6 +35,11 @@ public class Door {
       if (stage == 6) {
         t0.display();
       }
+      shininess(1.0);
+      lightSpecular(255, 255, 255);
+      directionalLight(50, 50, 50, 0, 2, -1);
+      ambientLight(25, 25, 25);
+      specular(25, 25, 25);
       ambientLight(0, 0, 50);
       specular(255, 0, 0);
       shininess(16.0);

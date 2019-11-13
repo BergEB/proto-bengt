@@ -30,7 +30,6 @@ public class HUD {
     noStroke();
     popMatrix();
     fadeIn();
-    println(mouseX, mouseY);
     cam.endHUD();
   }
   

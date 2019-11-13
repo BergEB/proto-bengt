@@ -9,13 +9,13 @@ PeasyCam cam;
 //QueasyCam qCam;
 HUD hud;
 Hallway h;
-defoText text1;
 heightMapObject t0;
 TriaFlow polyThree;
 TriaFlow polyFour;
 TriaFlow polyFive;
 TriaFlow polySix;
 TriaFlow polySeven;
+PFont robotoThin;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
@@ -24,6 +24,7 @@ void setup() {
   fullScreen(P3D);
   //size(1000, 1000, P3D);
   frameRate(60);
+  smooth(8);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
   stageStart = true;
@@ -37,7 +38,7 @@ void setup() {
   polyFive = new TriaFlow(5);
   polySix = new TriaFlow(6);
   polySeven = new TriaFlow(7);
-  text1 = new defoText();
+  robotoThin = createFont("Roboto-Thin.ttf", 32);
   t0.declare();
   /*
   qCam = new QueasyCam(this);
@@ -47,6 +48,7 @@ void setup() {
   qCam.pan-= PI / 2;
   */
   hint(ENABLE_STROKE_PERSPECTIVE);
+  hint(DISABLE_OPENGL_ERRORS);
 }
 
 void draw() {
