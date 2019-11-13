@@ -1,10 +1,5 @@
 heightMapJPG map;
 hmm defo;
-LineSegment l0;
-Ring r0;
-horizontalLineSegment hl0;
-fastHorizontalLineSegment fhl0;
-fastLineSegment fl0;
 
 float x1;
 float xRate;
@@ -20,11 +15,6 @@ void setup() {
   smooth(8);
   map = new heightMapJPG();
   defo = new hmm();
-  r0 = new Ring();
-  l0 = new LineSegment();
-  hl0 = new horizontalLineSegment();
-  fhl0 = new fastHorizontalLineSegment();
-  fl0 = new fastLineSegment();
   x1 = width / 2;
   y1 = height / 2;
   fat = 1.0;
@@ -36,11 +26,6 @@ void setup() {
 void draw() {
   background(0);
   defo.display();
-  r0.display();
-  l0.display();
-  hl0.display();
-  fhl0.display();
-  fl0.display();
   map.create();
   if (keyPressed && keyCode == SHIFT) {
     fill(10);
