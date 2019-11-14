@@ -1,12 +1,18 @@
 import peasy.*;
+import processing.video.*;
 
+Capture video;
 heightMapObject terrain0;
 PeasyCam cam;
 float[][] terrain;
 hud h;
+PImage camera;
 
 void setup() {
   frameRate(60);
+  video = new Capture(this, "name=FaceTime HD Camera (Built-in),size=400x400,fps=60");
+  video.start();
+  camera = new PImage();
   size(800, 800, P3D);
   smooth(8);
   terrain0 = new heightMapObject();
@@ -15,11 +21,16 @@ void setup() {
   cam.setMinimumDistance(100);
   h = new hud();
   terrain0.declare();
-  terrain0.logHeightValues();
+  //terrain0.logHeightValues();
 }
 
 void draw() {
-  background(0);
+  if (video.available() == true) {
+    video.read();
+    video.resize(800, 800);
+    save("image.jpg");
+  }
+  terrain0.declare();
   lights();
   println(frameRate);
   terrain0.display();

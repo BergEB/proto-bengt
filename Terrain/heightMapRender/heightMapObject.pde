@@ -1,5 +1,7 @@
+import processing.video.*;
+
 class heightMapObject {
-  int scl = 1;
+  int scl = 4;
   int cols;
   int rows;
   int peakX;
@@ -8,16 +10,16 @@ class heightMapObject {
   PrintWriter output;
   PImage heightmap;
   int index(int x, int y) {
-  return x + y * heightmap.width;
+  return x + y * /*heightmap*/camera.width;
   }
   
   heightMapObject() {
     cols = 800 / scl;
     rows = 800 / scl;
     terrain = new float[rows][cols];
-    heightmap = loadImage("heightmap.jpg");
-    heightmap.resize(800, 800);
-    output = createWriter("heightValues.txt");
+    //heightmap = loadImage("heightmap.jpg");
+    //heightmap.resize(800, 800);
+    //output = createWriter("heightValues.txt");
     peakZ = terrain[0][0];
   }
     
@@ -41,7 +43,7 @@ class heightMapObject {
   void declare() {
     for (int y = 0; y < cols; y++) {
       for (int x = 0; x < rows; x++) {
-        color pix = heightmap.pixels[index(x * scl, y * scl)];
+        color pix = /*heightmap*/camera.pixels[index(x * scl, y * scl)];
         terrain[x][y] = red(pix);
       }
     }
@@ -49,7 +51,7 @@ class heightMapObject {
   
   void logHeightValues() {
     for (int y = 0; y < terrain.length; y++) {
-      output.print("\n" + "\b" + y + "\n");
+      //output.print("\n" + "\b" + y + "\n");
       for (int x = 0; x < terrain[y].length; x++) 
         output.print(terrain[x][y] + " ");
     }
