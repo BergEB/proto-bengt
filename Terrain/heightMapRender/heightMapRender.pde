@@ -26,13 +26,15 @@ void draw() {
   if (video.available() == true) {
     video.read();
     video.resize(800, 800);
+    video.loadPixels();
   }
+  background(0);
   terrain0.declare();
   lights();
   println(frameRate);
   terrain0.display();
   h.display();
-  terrain0.peak();
+  //terrain0.peak();
 }
 
 void keyPressed() {
@@ -41,5 +43,5 @@ void keyPressed() {
       terrain[x][y] = 255 - terrain[x][y];
     }
   }
-  terrain0.peak();
+  //terrain0.peak();
 }
