@@ -32,6 +32,7 @@ class heightMapObject {
       beginShape(TRIANGLE_STRIP);
       for (int x = 0; x < rows; x++) {
         fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        //fill(video.pixels[index(x * scl, y * scl)];
         //stroke(terrain[x][y], 0, 255 - terrain[x][y]);
         vertex(x * scl, y * scl, terrain[x][y]);        
         vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
