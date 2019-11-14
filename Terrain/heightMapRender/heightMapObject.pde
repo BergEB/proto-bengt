@@ -41,6 +41,7 @@ class heightMapObject {
   }
   
   void declare() {
+    video.loadPixels();
     for (int y = 0; y < cols; y++) {
       for (int x = 0; x < rows; x++) {
         color pix = /*heightmap*/video.pixels[index(x * scl, y * scl)];
