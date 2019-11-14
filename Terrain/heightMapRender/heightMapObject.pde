@@ -10,7 +10,7 @@ class heightMapObject {
   PrintWriter output;
   PImage heightmap;
   int index(int x, int y) {
-  return x + y * /*heightmap*/camera.width;
+  return x + y * /*heightmap*/video.width;
   }
   
   heightMapObject() {
@@ -43,7 +43,7 @@ class heightMapObject {
   void declare() {
     for (int y = 0; y < cols; y++) {
       for (int x = 0; x < rows; x++) {
-        color pix = /*heightmap*/camera.pixels[index(x * scl, y * scl)];
+        color pix = /*heightmap*/video.pixels[index(x * scl, y * scl)];
         terrain[x][y] = red(pix);
       }
     }
