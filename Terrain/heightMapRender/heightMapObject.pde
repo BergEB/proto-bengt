@@ -1,7 +1,7 @@
 import processing.video.*;
 
 class heightMapObject {
-  int scl = 2;
+  int scl = 1;
   int cols;
   int rows;
   int peakX;
