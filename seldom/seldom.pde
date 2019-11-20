@@ -48,7 +48,7 @@ void setup() {
   qCam.pan-= PI / 2;
   */
   hint(ENABLE_STROKE_PERSPECTIVE);
-  hint(DISABLE_OPENGL_ERRORS);
+  //hint(DISABLE_OPENGL_ERRORS);
 }
 
 void draw() {

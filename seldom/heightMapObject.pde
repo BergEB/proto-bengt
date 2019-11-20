@@ -1,6 +1,6 @@
 class heightMapObject {
   private float[][] terrain;
-  int scl = 4;
+  int scl = 8;
   int cols;
   int rows;
   int peakX;
@@ -22,6 +22,7 @@ class heightMapObject {
     
   void display() {
     pushMatrix();
+    noLights();
     translate(400, -100, -1000);
     noStroke();
     rotateX(PI / 4);
@@ -29,11 +30,12 @@ class heightMapObject {
     rotateZ(r);
     translate(-400, -400, 0);
     r+= PI / 800;
+    fill(0);
     for (int y = 0; y < cols - 1; y++) {
       beginShape(TRIANGLE_STRIP);
       for (int x = 0; x < rows; x++) {
-        fill(terrain[x][y], 0, 255 - terrain[x][y]);
-        //stroke(terrain[x][y], 0, 255 - terrain[x][y]);
+        //fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        stroke(terrain[x][y], 0, 255 - terrain[x][y]);
         vertex(x * scl, y * scl, terrain[x][y]);        
         vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
       }
