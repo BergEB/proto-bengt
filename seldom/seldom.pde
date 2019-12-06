@@ -1,12 +1,12 @@
 import peasy.*;
-//import queasycam.*;
+import queasycam.*;
 
 private int stage;
 private boolean stageStart;
 lobby l;
 Door d;
 PeasyCam cam;
-//QueasyCam qCam;
+QueasyCam qCam;
 HUD hud;
 Hallway h;
 heightMapObject t0;
@@ -23,7 +23,7 @@ float viewZ = 800;
 void setup() {
   fullScreen(P3D);
   //size(1000, 1000, P3D);
-  frameRate(60);
+  //frameRate(60);
   smooth(8);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
@@ -40,13 +40,13 @@ void setup() {
   polySeven = new TriaFlow(7);
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   t0.declare();
-  /*
+  
   qCam = new QueasyCam(this);
   qCam.position.x = viewX;
   qCam.position.y = viewY;
   qCam.position.z = viewZ;
   qCam.pan-= PI / 2;
-  */
+  
   hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
 }
@@ -64,6 +64,8 @@ void draw() {
   l.display();
   d.display();
   hud.display();
+  mouseX = 0;
+  mouseY = 0;
 }
   
 boolean mouseWithin(double x1, double y1, double x2, double y2) {

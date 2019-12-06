@@ -10,8 +10,8 @@ public class HUD {
   
   void display() {
     movements();
-    cursor();
-    //cursor3D();
+    //cursor();
+    cursor3D();
     
   }
   
@@ -34,12 +34,15 @@ public class HUD {
   }
   
   void cursor3D() {
+    cam.beginHUD();
     pushMatrix();
     translate(width / 2, height / 2);
     fill(200);
     noStroke();
+    if (
     ellipse(0, 0, 8, 8);
     popMatrix();
+    cam.endHUD();
   }
   
   void interactable(double x1, double y1, double x2, double y2) {
