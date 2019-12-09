@@ -19,7 +19,6 @@ public class HUD {
     cam.beginHUD();
     pushMatrix();
     noLights();
-    fill(200);
     translate(mouseX, mouseY);
     if (!l.lightswitch && d.A <= -(3*PI)/5) {
       interactable(935.0, 815.0, 985.0, 865.0);
@@ -39,7 +38,7 @@ public class HUD {
     translate(width / 2, height / 2);
     fill(200);
     noStroke();
-    if (
+    stroke(hud.cursorStroke);
     ellipse(0, 0, 8, 8);
     popMatrix();
     cam.endHUD();
@@ -49,8 +48,19 @@ public class HUD {
     if (mouseWithin(x1, y1, x2, y2) && !h.zooming) {
       hud.cursorStroke = 200;
       strokeWeight(1.5);
-      stroke(hud.cursorStroke);
       noFill();
+    } else {
+      hud.cursorStroke = 0;
+    }
+  }
+  
+  void interactable() {
+    if (!h.zooming) {
+      hud.cursorStroke = 200;
+      strokeWeight(1.5);
+      noFill();
+    } else {
+      hud.cursorStroke = 0;
     }
   }
   

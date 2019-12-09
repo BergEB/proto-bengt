@@ -21,8 +21,8 @@ float viewY = 200;
 float viewZ = 800;
 
 void setup() {
-  fullScreen(P3D);
-  //size(1000, 1000, P3D);
+  //fullScreen(P3D);
+  size(1000, 1000, P3D);
   //frameRate(60);
   smooth(8);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
