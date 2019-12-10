@@ -1,6 +1,7 @@
 public class HUD {
   private float cursorStroke;
   private int fade;
+  boolean interactable;
   
   HUD() {
     stage = 0;
@@ -36,9 +37,15 @@ public class HUD {
     cam.beginHUD();
     pushMatrix();
     translate(width / 2, height / 2);
-    fill(200);
-    noStroke();
-    stroke(hud.cursorStroke);
+    if (interactable) {
+      l.interactLight();
+      noFill();
+      strokeWeight(1.5);
+      stroke(200);
+    } else {
+      noStroke();
+      fill(200);
+    }
     ellipse(0, 0, 8, 8);
     popMatrix();
     cam.endHUD();
@@ -54,13 +61,11 @@ public class HUD {
     }
   }
   
-  void interactable() {
-    if (!h.zooming) {
-      hud.cursorStroke = 200;
-      strokeWeight(1.5);
-      noFill();
+  void interactable(float targetX, float targetY, float targetZ, float boundsX, float boundsY) {
+    if (screenX(targetX, targetY, targetZ) > (width / 2) - boundsX && screenX(targetX, targetY, targetZ) < (width / 2) + boundsX && screenY(targetX, targetY, targetZ) > (height / 2) - boundsY && screenY(targetX, targetY, targetZ) < (height / 2) + boundsY) {
+      interactable =  true;
     } else {
-      hud.cursorStroke = 0;
+      interactable = false;
     }
   }
   

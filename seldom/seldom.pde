@@ -47,7 +47,7 @@ void setup() {
   qCam.position.z = viewZ;
   qCam.pan-= PI / 2;
   
-  hint(ENABLE_STROKE_PERSPECTIVE);
+  //hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
 }
 

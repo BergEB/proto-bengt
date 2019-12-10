@@ -67,7 +67,7 @@ public class Door {
   
   void door() {
     if (Door) {
-      sphereDetail(20);
+      sphereDetail(50);
       pushMatrix();
       fill(177/2, 129/2, 95/2);
       translate(800, 220, 0);
