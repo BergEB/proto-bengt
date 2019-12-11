@@ -21,11 +21,13 @@ public class Hallway {
     else {
       z = 0;
       zooming = false;
-      stage++;
-      stageStart = true;
-      d.Door = false;
-      d.A = 0;
-      l.lightswitch = true;
+      if (stage != 6) {
+        stage++;
+        stageStart = true;
+        d.Door = false;
+        d.A = 0;
+        l.lightswitch = true;
+      }
     }
   }
 }

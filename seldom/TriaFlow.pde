@@ -12,10 +12,10 @@ class TriaFlow {
   void display() {
     noLights();
     pushMatrix();
-    translate(-150, -300, -1000);
+    translate(-150, -300, -300);
     for (int i = 20; i > 0; i--) {
       pushMatrix();
-      translate(width / 2, height / 2, -i * 3);
+      translate(width / 2, height / 2, -i * 15);
       rotate(R * (11.5 - i));
       polygonFX((i * 30) + 1);
       popMatrix();
@@ -27,7 +27,7 @@ class TriaFlow {
   void polygonFX(int n) {
     fill(0);
     stroke(200);
-    strokeWeight(2);
+    strokeWeight(2.0);
     polygon(0, 0, n, s);
   }
 }

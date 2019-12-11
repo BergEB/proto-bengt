@@ -15,14 +15,15 @@ TriaFlow polyFour;
 TriaFlow polyFive;
 TriaFlow polySix;
 TriaFlow polySeven;
+boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
 
 void setup() {
-  //fullScreen(P3D);
-  size(1000, 1000, P3D);
+  fullScreen(P3D);
+  //size(1000, 1000, P3D);
   //frameRate(60);
   smooth(8);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
@@ -46,6 +47,9 @@ void setup() {
   qCam.position.y = viewY;
   qCam.position.z = viewZ;
   qCam.pan-= PI / 2;
+  qCam.sensitivity = 0.5;
+  qCam.speed = 0;
+  perspective(PI/3, (float)width / height, 0.01f, 2000f);
   
   //hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
@@ -67,6 +71,20 @@ void draw() {
   mouseX = 0;
   mouseY = 0;
 }
+
+
+void keyPressed() {
+  if (keyCode == SHIFT) {
+    keyHeld = true;
+  }
+}
+
+void keyReleased() {
+  if (keyCode == SHIFT) {
+    keyHeld = false;
+  }
+}
+
   
 boolean mouseWithin(double x1, double y1, double x2, double y2) {
   if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {

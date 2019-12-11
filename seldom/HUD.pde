@@ -4,7 +4,7 @@ public class HUD {
   boolean interactable;
   
   HUD() {
-    stage = 0;
+    stage = 5;
     fade = 255;
     stageStart = true;
   }
@@ -13,6 +13,12 @@ public class HUD {
     movements();
     //cursor();
     cursor3D();
+    /*if (keyHeld) {
+      cursor();
+    } else {
+      cursor3D();
+    }*/
+    fadeIn();
     
   }
   
@@ -29,13 +35,13 @@ public class HUD {
     ellipse(0, 0, 8, 8);
     noStroke();
     popMatrix();
-    fadeIn();
     cam.endHUD();
   }
   
   void cursor3D() {
     cam.beginHUD();
     pushMatrix();
+    noLights();
     translate(width / 2, height / 2);
     if (interactable) {
       l.interactLight();
@@ -85,6 +91,9 @@ public class HUD {
       text("^", 0, 0, 100, 100);
       popMatrix();
       cam.endHUD();
+      if (keyPressed && (key == 'w' || keyCode == UP)) {
+        h.zooming = true;
+      }
     }
   }
   
@@ -95,6 +104,7 @@ public class HUD {
         fill(0, fade);
         rectMode(CENTER);
         cam.beginHUD();
+        noStroke();
         rect(width / 2, height / 2, width, height);
         cam.endHUD();
         fade--;
