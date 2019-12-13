@@ -1,5 +1,9 @@
 import peasy.*;
 import queasycam.*;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.lang.Object;
+import java.awt.GraphicsDevice;
 
 private int stage;
 private boolean stageStart;
@@ -26,6 +30,7 @@ void setup() {
   //size(1000, 1000, P3D);
   //frameRate(60);
   smooth(8);
+  Robot robot;
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
   stageStart = true;
@@ -48,9 +53,15 @@ void setup() {
   qCam.position.z = viewZ;
   qCam.pan-= PI / 2;
   qCam.sensitivity = 0.5;
-  qCam.speed = 0;
+  //qCam.speed = 0;
   perspective(PI/3, (float)width / height, 0.01f, 2000f);
   
+  try {
+    robot = new Robot();
+  }
+  catch (AWTException e) {
+    e.printStackTrace();
+  }
   //hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
 }
@@ -68,8 +79,7 @@ void draw() {
   l.display();
   d.display();
   hud.display();
-  mouseX = 0;
-  mouseY = 0;
+  robot.mouseMove(width / 2, height / 2);
 }
 
 

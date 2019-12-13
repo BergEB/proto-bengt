@@ -20,9 +20,10 @@ public class Hallway {
       z+= 2;
     }
     else {
-      z = 0;
+      //z = 0;
       zooming = false;
       if (stage != 6) {
+        z = 0;
         stage++;
         stageStart = true;
         d.Door = false;

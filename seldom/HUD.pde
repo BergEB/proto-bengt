@@ -4,7 +4,7 @@ public class HUD {
   boolean interactable;
   
   HUD() {
-    stage = 5;
+    stage = 0;
     fade = 255;
     stageStart = true;
   }
@@ -91,7 +91,7 @@ public class HUD {
       text("^", 0, 0, 100, 100);
       popMatrix();
       cam.endHUD();
-      if (keyPressed && (key == 'w' || keyCode == UP)) {
+      if (keyPressed && (/*key == 'w' ||*/ keyCode == UP)) {
         h.zooming = true;
       }
     }
