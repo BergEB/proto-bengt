@@ -8,6 +8,7 @@ public class Hallway {
   }
   
   void display() {
+    translate(0, 0, z);
     if (zooming) {
       zoom();
     }
@@ -15,7 +16,7 @@ public class Hallway {
   
   void zoom() {
     if (z < 1000) {
-      translate(0, 0, z);
+      //translate(0, 0, z);
       z+= 2;
     }
     else {
