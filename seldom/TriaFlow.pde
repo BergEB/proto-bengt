@@ -5,19 +5,19 @@ class TriaFlow {
   
   TriaFlow(int sides) {
     R = 0;
-    rAcc = PI / 2500;
+    rAcc = PI / 5000;
     this.s = sides;
   }
   
   void display() {
     noLights();
     pushMatrix();
-    translate(-150, -300, -300);
-    for (int i = 20; i > 0; i--) {
+    translate(-150, -300, -1000);
+    for (int i = 100; i > 0; i--) {
       pushMatrix();
-      translate(width / 2, height / 2, -i * 15);
-      rotate(R * (11.5 - i));
-      polygonFX((i * 30) + 1);
+      translate(width / 2, height / 2, -i * 10);
+      rotate(R * (100 - i));
+      polygonFX((i * 5) + 5);
       popMatrix();
     }
     R+= rAcc;

@@ -4,7 +4,7 @@ public class HUD {
   boolean interactable;
   
   HUD() {
-    stage = 0;
+    stage = 1;
     fade = 255;
     stageStart = true;
   }

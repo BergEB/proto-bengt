@@ -79,7 +79,7 @@ void draw() {
   l.display();
   d.display();
   hud.display();
-  robot.mouseMove(width / 2, height / 2);
+  //robot.mouseMove(width / 2, height / 2);
 }
 
 
