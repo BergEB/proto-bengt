@@ -5,7 +5,7 @@ class TriaFlow {
   
   TriaFlow(int sides) {
     R = 0;
-    rAcc = PI / 5000;
+    rAcc = PI / 50000;
     this.s = sides;
   }
   
@@ -17,11 +17,14 @@ class TriaFlow {
       pushMatrix();
       translate(width / 2, height / 2, -i * 10);
       rotate(R * (100 - i));
-      polygonFX((i * 5) + 5);
+      polygonFX((i * 5) + 1);
       popMatrix();
     }
     R+= rAcc;
     popMatrix();
+    if (keyPressed && key == ' ') {
+      rAcc*= -1;
+    }
   }
   
   void polygonFX(int n) {

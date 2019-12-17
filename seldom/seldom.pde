@@ -1,7 +1,8 @@
 import peasy.*;
 import queasycam.*;
 import java.awt.AWTException;
-import java.awt.Robot;
+import java.awt.*;
+import java.awt.event.*;
 import java.lang.Object;
 import java.awt.GraphicsDevice;
 
@@ -19,18 +20,19 @@ TriaFlow polyFour;
 TriaFlow polyFive;
 TriaFlow polySix;
 TriaFlow polySeven;
+SpiralLOW spiral;
 boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
+Robot robot;
 
 void setup() {
   fullScreen(P3D);
   //size(1000, 1000, P3D);
   //frameRate(60);
   smooth(8);
-  Robot robot;
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
   stageStart = true;
@@ -44,6 +46,7 @@ void setup() {
   polyFive = new TriaFlow(5);
   polySix = new TriaFlow(6);
   polySeven = new TriaFlow(7);
+  spiral = new SpiralLOW();
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   t0.declare();
   
@@ -58,6 +61,7 @@ void setup() {
   
   try {
     robot = new Robot();
+    robot.setAutoDelay(0);
   }
   catch (AWTException e) {
     e.printStackTrace();
@@ -79,7 +83,7 @@ void draw() {
   l.display();
   d.display();
   hud.display();
-  //robot.mouseMove(width / 2, height / 2);
+  robot.mouseMove(width / 2, height / 2);
 }
 
 
@@ -105,10 +109,10 @@ boolean mouseWithin(double x1, double y1, double x2, double y2) {
   }
 }
 
-void nextStage() {
+/*void nextStage() {
   if (mouseWithin(935.0, 815.0, 985.0, 865.0)) {
     if (mousePressed && mouseButton == LEFT) {
       h.zooming = true;
     }
   }
-}
+}*/

@@ -35,6 +35,9 @@ public class Door {
       if (stage == 6) {
         t0.display();
       }
+      if (stage == 7) {
+        spiral.display();
+      }
       shininess(1.0);
       lightSpecular(255, 255, 255);
       directionalLight(50, 50, 50, 0, 2, -1);

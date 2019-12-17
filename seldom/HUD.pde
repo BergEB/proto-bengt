@@ -4,7 +4,7 @@ public class HUD {
   boolean interactable;
   
   HUD() {
-    stage = 1;
+    stage = 7;
     fade = 255;
     stageStart = true;
   }
@@ -22,7 +22,7 @@ public class HUD {
     
   }
   
-  void cursor() {
+  /*void cursor() {
     cam.beginHUD();
     pushMatrix();
     noLights();
@@ -36,7 +36,7 @@ public class HUD {
     noStroke();
     popMatrix();
     cam.endHUD();
-  }
+  }*/
   
   void cursor3D() {
     cam.beginHUD();
