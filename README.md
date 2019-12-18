@@ -2,7 +2,7 @@
 <br />
 <br />
 
-# **=̪̻̮̹̻̭͍̦̪̗̘̣̈͑̓̄̅͋ͯ̋̾̆̊̈́̆̓ͪ͋=̰̥̦̯̻̙͋ͧ̓S̘̖̭̘̙̖̥̖͚̤̘͕̘͙̰͇̺̃͋̓̓ͯ̆ͥ͆ͅE͇̟̜̥̞̪͉̲̖̥̪̫ͧ͌̒̒ͫ͒ͤ̐ͮ͆ͪ̒͐ͯ͆̏ͮL̦͈̝̼̰͍̜̲͎̟͕͚̤͙̬ͣͮ̃̔ͫͪ̂̽͊̂͌ͮͤ̒̚D̮͙̹͍̯̼̗̤͈̦͖̱̗͇͇̺̰̔ͬ͒̇̐̏̊̂͐̇ͨ̐ͮO̟̩̙̳͑̏ͨ̆͂ͩͧ̾̓̈̀ͩ͛̓M̻̻̤̼͙̙̯̞̞͙̜̖͓͓͉̱͗͊͗ͥ̓͂=̝͖̣͖̪̯̳̱͖̥͚̖̰̠ͩ͗ͥ̎̚=̳̯̞̗̩̫̩̜̲͍̺̯̓ͩ̆̄̉̃̂̾**
+# **=̪̻̮̹̻̭͍̦̪̗̘̣̈͑̓̄̅͋ͯ̋̾̆̊̈́̆̓ͪ͋=̰̥̦̯̻̙͋ͧ̓S̘̖̭̘̙̖̥̖͚̤̘͕̘͙̰͇̺̃͋̓̓ͯ̆ͥ͆ͅE͇̟̜̥̞̪͉̲̖̥̪̫ͧ͌̒̒ͫ͒ͤ̐ͮ͆ͪ̒͐ͯ͆̏ͮL̦͈̝̼̰͍̜̲͎̟͕͚̤͙̬ͣͮ̃̔ͫͪ̂̽͊̂͌ͮͤ̒̚D̮͙̹͍̯̼̗̤͈̦͖̱̗͇͇̺̰̔ͬ͒̇̐̏̊̂͐̇ͨ̐ͮO̟̩̙̳͑̏ͨ̆͂ͩͧ̾̓̈̀ͩ͛̓M̻̻̤̼͙̙̯̞̞͙̜̖͓͓͉̱͗͊͗ͥ̓͂=̝͖̣͖̪̯̳̱͖̥͚̖̰̠ͩ͗ͥ̎̚=̳̯̞̗̩̫̩̜̲͍̺̯̓ͩ̆̄̉̃̂̾**
 
 
 <br />
@@ -63,13 +63,3 @@ void create() {
 ## *Authors*
 * **Erik Bengt Berg** 
 * **Erik's brain**
-
-## *Acknowledgments*
-Thank you, ChocolateLab Stella = new Dog, (*happy b-day*)<br />
-Thanks mom. (*who throws a birthday party for a dog?*)<br />
-Obese TY to Office Depot; 24/7 mad lumbar support.<br />
-Thank you, old desk lmap with phalange-cooking bulb.<br />
-This Apple mouse sucks, and thanks Feinberg.<br />
-100%, mouse w/separated right and left click. (*Addy goes hard*)<br />
-Thanks Doc, for telling Yazmine to get off of her phone and pay attention, and also knowledge. (*the phone thing is a lost cause*)
-And most of all, Thank You to Read S. for encouraging the ascent by being a role model who can make computers go beep boop n shit!
