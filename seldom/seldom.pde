@@ -21,6 +21,7 @@ TriaFlow polyFive;
 TriaFlow polySix;
 TriaFlow polySeven;
 SpiralLOW spiral;
+WH wormHole;
 boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
@@ -47,6 +48,7 @@ void setup() {
   polySix = new TriaFlow(6);
   polySeven = new TriaFlow(7);
   spiral = new SpiralLOW();
+  wormHole = new WH(40);
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   t0.declare();
   
