@@ -13,11 +13,11 @@ class WH {
     noLights();
     pushMatrix();
     translate(-150, -300, -1000);
-    for (int i = 100; i > 0; i--) {
+    for (int i = 200; i > 0; i--) {
       pushMatrix();
-      translate(width / 2, height / 2, -i * 10);
-      rotate(R * (50 - i));
-      polygonFX(pow(1.125, (Math.abs(50 - i))) + 5);
+      translate(width / 2, height / 2, -i * 5);
+      rotate(R * (100 - i));
+      polygonFX(pow(1.125, (Math.abs(50 - (i / 2)))) + 1);
       popMatrix();
     }
     R+= rAcc;
