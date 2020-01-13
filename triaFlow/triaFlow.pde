@@ -2,27 +2,34 @@ float R;
 float rAcc;
 
 void setup() {
-  size(800, 800);
+  size(1000, 1000, P3D);
+  smooth(8);
+  frameRate(60);
   R = 0;
-  rAcc = PI / 2500;
+  rAcc = PI / 25000;
 }
 
 void draw() {
+  //rotateY(PI/2);
   background(0);
   for (int i = 20; i > 0; i--) {
     pushMatrix();
-    translate(width / 2, height / 2);
-    rotate(R * (11.5 - i));
-    polygonFX((i * 30) + 1);
+    translate(width / 2, height / 2, i * 30);
+    rotateZ(R * ( -i));
+    polygonFX((i * 25) - 15);
     popMatrix();
   }
   println(R);
   R+= rAcc;
+  if (R > 0.029 || R < -0.029) {
+    rAcc*= -1;
+  }
 }
 
 
 void polygonFX(int n) {
-    fill(0);
+    //fill(0);
+    noFill();
     stroke(200);
     strokeWeight(2);
     polygon(0, 0, n, 3);
