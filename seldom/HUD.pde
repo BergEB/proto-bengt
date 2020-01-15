@@ -1,11 +1,15 @@
 public class HUD {
-  private float cursorStroke;
-  private int fade;
+  //private float cursorStroke;
+  private int fadeIntensity;
   boolean interactable;
+  boolean fadeStartSet;
+  int fadeStart;
   
   HUD() {
     stage = 8;
-    fade = 255;
+    fadeIntensity = 255;
+    fadeStart = 0;
+    fadeStartSet = false;
     stageStart = true;
   }
   
@@ -13,7 +17,7 @@ public class HUD {
     movements();
     //cursor();
     cursor3D();
-    /*if (keyHeld) {
+    /*if (keyHeld) {   // FIX FIX FIX FIX FIX FIX FIX FIX FIX
       cursor();
     } else {
       cursor3D();
@@ -59,11 +63,11 @@ public class HUD {
   
   void interactable(double x1, double y1, double x2, double y2) {
     if (mouseWithin(x1, y1, x2, y2) && !h.zooming) {
-      hud.cursorStroke = 200;
-      strokeWeight(1.5);
-      noFill();
+      //hud.cursorStroke = 200;
+      //strokeWeight(1.5);
+      //noFill();
     } else {
-      hud.cursorStroke = 0;
+      //hud.cursorStroke = 0;
     }
   }
   
@@ -100,18 +104,23 @@ public class HUD {
   
   void fadeIn() {
     if (stageStart) {
-      if (fade > 0) {
-        fill(0, fade);
+      if (!fadeStartSet) {
+        fadeStart = millis();
+        fadeStartSet = true;
+      }
+      if (millis() - fadeStart < 3000) { //  <-- three second timer
+        fadeIntensity = 255 - (int)(255.0 * ((millis() - fadeStart) / 3000.0));
+        fill(0, fadeIntensity);
         rectMode(CENTER);
         cam.beginHUD();
         noStroke();
         rect(width / 2, height / 2, width, height);
         cam.endHUD();
-        fade--;
       }
       else {
-        fade = 255;
+        fadeIntensity = 255;
         stageStart = false;
+        fadeStartSet = false;
       }
     }
   }

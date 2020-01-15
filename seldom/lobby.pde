@@ -20,11 +20,11 @@ public class lobby {
     box(1600, 0, 1600);    //floor
     translate(-800, -400, -800);
     translate(800, 200, 0);
-    pushMatrix();
-    translate(0, -181, 0);
-    box(1600, 38, 0);    //far wall
-    popMatrix();
     if (d.Door) {
+      pushMatrix();
+      translate(0, -181, 0);
+      box(1600, 38, 0);    //far wall
+      popMatrix();
       pushMatrix();
       translate(-699.0 / 2.0 - 101, 19, 0);
       box(699, 362, 0);
@@ -34,8 +34,7 @@ public class lobby {
     }
     else {
       pushMatrix();
-      translate(0, 19, 0);
-      box(1600, 362, 0);
+      box(1600, 400, 0);
       popMatrix();
     }
     translate(0, 0, 1600);

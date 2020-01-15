@@ -22,18 +22,23 @@ TriaFlow polySix;
 TriaFlow polySeven;
 SpiralLOW spiral;
 WH wormHole;
+Exhibits exhibits;
 boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
-Robot robot;
+PGraphics test;
+boolean created;
+//Robot robot;
 
 void setup() {
   fullScreen(P3D);
   //size(1000, 1000, P3D);
   //frameRate(60);
   smooth(8);
+  created = false;
+  
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
   stageStart = true;
@@ -60,14 +65,15 @@ void setup() {
   qCam.sensitivity = 0.5;
   //qCam.speed = 0;
   perspective(PI/3, (float)width / height, 0.01f, 2000f);
+  test = createGraphics(1000, 1000, P3D);
   
-  try {
+  /*try {
     robot = new Robot();
     robot.setAutoDelay(0);
   }
   catch (AWTException e) {
     e.printStackTrace();
-  }
+  }*/
   //hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
 }
@@ -85,7 +91,9 @@ void draw() {
   l.display();
   d.display();
   hud.display();
-  robot.mouseMove(width / 2, height / 2);
+  //robot.mouseMove(width / 2, height / 2);
+  
+  println(millis() + "\t" + hud.fadeStart + "\t" + hud.fadeIntensity);
 }
 
 

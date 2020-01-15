@@ -1,9 +1,7 @@
 class defoText {
-  PFont robotoThin;
   float slideX;
   
   defoText() {
-    robotoThin = createFont("Roboto-Thin.ttf", 32);
   }
   
   void display() {
