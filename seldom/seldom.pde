@@ -28,7 +28,7 @@ PFont robotoThin;
 float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
-PGraphics test;
+//PGraphics test;
 boolean created;
 //Robot robot;
 
@@ -65,7 +65,7 @@ void setup() {
   qCam.sensitivity = 0.5;
   //qCam.speed = 0;
   perspective(PI/3, (float)width / height, 0.01f, 2000f);
-  test = createGraphics(1000, 1000, P3D);
+  //test = createGraphics(1000, 1000, P3D);
   
   /*try {
     robot = new Robot();
@@ -89,6 +89,7 @@ void draw() {
   
   h.display();
   l.display();
+  //exhibits.display();
   d.display();
   hud.display();
   //robot.mouseMove(width / 2, height / 2);

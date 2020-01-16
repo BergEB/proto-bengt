@@ -4,10 +4,9 @@ class hud {
   }
   
   void display() {
-    textSize(24);
+    textSize(32);
     fill(200, 0, 200);
-    text("FPS: " + (float)frameRate, 25, 150, 150);
-    text("Verticies: " + (terrain0.cols * terrain0.rows), 25, 650, 150);
-    text("Disance: " + (float)cam.getDistance(), 25, 675, 150);
+    text((float)cam.getDistance(), 25, 825, 150);
+    text((float)frameRate, 25, -25, 150);
   }
 }

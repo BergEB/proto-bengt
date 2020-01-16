@@ -6,7 +6,7 @@ public class HUD {
   int fadeStart;
   
   HUD() {
-    stage = 8;
+    stage = 6;
     fadeIntensity = 255;
     fadeStart = 0;
     fadeStartSet = false;
