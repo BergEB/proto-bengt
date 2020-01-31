@@ -10,14 +10,14 @@ hud h;
 void setup() {
   frameRate(60);
   size(800, 800, P3D);
-  smooth(8);
+  //smooth(8);
   terrain0 = new heightMapObject();
   cam = new PeasyCam(this, 400, 400, 127, 800);
   cam.setMaximumDistance(2000);
   cam.setMinimumDistance(100);
   h = new hud();
-  terrain0.declare();
-  terrain0.logHeightValues();
+  //terrain0.declare();
+  //terrain0.logHeightValues();
 }
 
 void draw() {
@@ -33,7 +33,7 @@ void draw() {
     record = false;
   }
   h.display();
-  terrain0.peak();
+  //terrain0.peak();
 }
 
 void keyPressed() {
