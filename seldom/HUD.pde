@@ -6,7 +6,7 @@ public class HUD {
   int fadeStart;
   
   HUD() {
-    stage = 6;
+    stage = 0;
     fadeIntensity = 255;
     fadeStart = 0;
     fadeStartSet = false;
@@ -58,6 +58,10 @@ public class HUD {
     }
     ellipse(0, 0, 8, 8);
     popMatrix();
+    fill(200);
+    stroke(200);
+    textFont(robotoThin, 12);
+    text(frameRate, 30, 15);
     cam.endHUD();
   }
   

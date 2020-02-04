@@ -18,6 +18,7 @@ public class Door {
   
   void frame() {
     //exhibits.display();
+    //defo.display();
     if (stage == 1) {
       polyThree.display();
     }

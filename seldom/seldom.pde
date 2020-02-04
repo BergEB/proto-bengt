@@ -8,6 +8,7 @@ import java.awt.GraphicsDevice;
 
 private int stage;
 private boolean stageStart;
+defoText defo;
 lobby l;
 Door d;
 PeasyCam cam;
@@ -55,6 +56,7 @@ void setup() {
   spiral = new SpiralLOW();
   wormHole = new WH(40);
   robotoThin = createFont("Roboto-Thin.ttf", 32);
+  defo = new defoText();
   t0.declare();
   
   qCam = new QueasyCam(this);
