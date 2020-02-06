@@ -1,5 +1,5 @@
 class heightMapObject {
-  int scl = 4;
+  int scl = 8;
   int cols;
   int rows;
   int peakX;
@@ -28,7 +28,7 @@ class heightMapObject {
     
   void display() {
     //stroke(0, 255, 255);
-    noStroke();
+    //noStroke();
     //fill(0);
     yoff = yoffBase;
     //yoffBase+= 0.01;
@@ -39,14 +39,16 @@ class heightMapObject {
       beginShape(TRIANGLE_STRIP);
       for (int x = 0; x < rows; x++) {
         terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 255);
-        //stroke(terrain[x][y], 0, 255 - terrain[x][y]);
-        fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        stroke(terrain[x][y], 0, 255 - terrain[x][y]);
+        //fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        //noFill();
+        fill(0);
         vertex(x * scl, y * scl, terrain[x][y]);        
         vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
-        xoff += 0.01;
+        xoff += 0.025;
       }
       endShape();
-      yoff += 0.01;
+      yoff += 0.025;
     }
     
     /*for (int y = 0; y < cols - 1; y++) {
@@ -70,20 +72,7 @@ class heightMapObject {
     }
   }
   
-  void keyPressed() {
-    if (keyCode == UP) {
-      yoff+=yoffBase;
-    }
-    if (keyCode == DOWN) {
-      yoff-=yoffBase;
-    }
-    if (keyCode == LEFT) {
-      xoff+=xoffBase;
-    }
-    if (keyCode == RIGHT) {
-      xoff-=xoffBase;
-    }
-  }
+  
   
   void logHeightValues() {
     for (int y = 0; y < terrain.length; y++) {
