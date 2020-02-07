@@ -17,7 +17,7 @@ void setup() {
   cam.setMaximumDistance(2000);
   cam.setMinimumDistance(100);
   h = new hud();
-  perspective(PI/3, (float)width / height, 0.01f, 2000f);
+  perspective(PI/3, (float)width / height, 0.01f, 3500f);
   //terrain0.declare();
   //terrain0.logHeightValues();
 }

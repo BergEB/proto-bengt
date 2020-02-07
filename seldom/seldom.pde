@@ -66,7 +66,7 @@ void setup() {
   qCam.pan-= PI / 2;
   qCam.sensitivity = 0.5;
   //qCam.speed = 0;
-  perspective(PI/3, (float)width / height, 0.01f, 2000f);
+  perspective(PI/3, (float)width / height, 0.01f, 5000f);
   //test = createGraphics(1000, 1000, P3D);
   
   /*try {
@@ -76,7 +76,7 @@ void setup() {
   catch (AWTException e) {
     e.printStackTrace();
   }*/
-  //hint(ENABLE_STROKE_PERSPECTIVE);
+  hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);
 }
 
