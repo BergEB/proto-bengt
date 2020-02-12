@@ -12,6 +12,7 @@ void setup() {
   size(1400, 900, P3D);
   // The file must be in the data folder
   // of the current sketch to load successfully
+  textureMode(NORMAL);
   s = loadShape("01/bush_01.obj"); 
  
   // apply its texture 
@@ -22,16 +23,16 @@ void setup() {
   s.setTexture(img1);
   //s.setTexture(img2);
   //s.setTexture(img3);
-  s.setTexture(img4);
+  //s.setTexture(img4);
  
-  s.scale(20);
+  //s.scale(20);
   camera = new PeasyCam(this, 0, 0, 0, 50);
  
   camera.setMaximumDistance(5000);
 }
  
 void draw() {
-  background(0);
+  background(128);
   lights();
   shape(s, 0, 0);
 }
