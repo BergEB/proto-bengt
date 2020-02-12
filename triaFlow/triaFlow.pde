@@ -20,9 +20,23 @@ void draw() {
     popMatrix();
   }
   println(R);
-  R+= rAcc;
-  if (R > 0.029 || R < -0.029) {
-    rAcc*= -1;
+  //R+= rAcc;
+  //if (R > 0.029 || R < -0.029) {
+    //rAcc*= -1;
+  //}
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == RIGHT) {
+      R+= rAcc;
+    }
+    if (keyCode == LEFT) {
+      R-= rAcc;
+    }
+  }
+  if (key == 's' || key == 'S') {
+    save("thumbnail.jpg");
   }
 }
 
