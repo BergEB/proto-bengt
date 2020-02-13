@@ -24,6 +24,7 @@ TriaFlow polySeven;
 SpiralLOW spiral;
 WH wormHole;
 Exhibits exhibits;
+Objects obj;
 boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
@@ -55,6 +56,7 @@ void setup() {
   polySeven = new TriaFlow(7);
   spiral = new SpiralLOW();
   wormHole = new WH(40);
+  obj = new Objects();
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   defo = new defoText();
   t0.declare();
@@ -92,6 +94,9 @@ void draw() {
   h.display();
   l.display();
   //exhibits.display();
+  obj.display();
+  shininess(1.0);
+  specular(25, 25, 25);
   d.display();
   hud.display();
   //robot.mouseMove(width / 2, height / 2);
