@@ -8,8 +8,6 @@ class defoText {
     textFont(robotoThin, 16);
     fill(255, 100);
     pushMatrix();
-    textMode(SHAPE);
-    noLights();
     translate(450, 280, 100);
     //rotate((PI / 4.5));
     for (float x = 0; x < 20; x++) {

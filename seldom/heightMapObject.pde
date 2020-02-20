@@ -22,7 +22,7 @@ class heightMapObject {
     
   void display() {
     pushMatrix();
-    noLights();
+    //noLights();  //have yet to test performance impact
     translate(400, -100, -1000);
     noStroke();
     rotateX(PI / 4);

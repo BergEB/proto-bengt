@@ -10,7 +10,6 @@ class WH {
   }
   
   void display() {
-    noLights();
     pushMatrix();
     translate(-150, -300, -1000);
     for (int i = 400; i > 0; i--) {

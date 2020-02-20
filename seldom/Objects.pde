@@ -1,20 +1,27 @@
 public class Objects {
   PShape s;
+  PImage texture;
   
   Objects() {
-    s = loadShape("statue/Alucy.obj"); 
+    s = loadShape("statue/Alucy.obj");
+    texture = loadImage("statue/stone.jpg");
     s.scale(0.5);
   }
   
   void display() {
     pushMatrix();
-    //specular(102, 51, 0);
-    shininess(2.0);
-    //ambient(25, 14, 0);
-    //emissive(160, 140, 140);
+    /*shininess(0.5);
+    lightSpecular(5, 5, 5);
+    ambient(2, 2, 2);
+    emissive(5, 5, 5);
+    specular(4, 4, 4);*/
+    textureMode(IMAGE);
+    textureWrap(CLAMP);
+    s.setTexture(texture);
+    baseLighting();
     translate(1400, 400, 200);
     rotateX(PI);
-    rotateY(-PI/2);
+    rotateY(-HALF_PI);
     shape(s, 0, 0);
     popMatrix();
   }

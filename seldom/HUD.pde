@@ -23,6 +23,9 @@ public class HUD {
       cursor3D();
     }*/
     fadeIn();
+    shapeMode(CORNER);
+    rectMode(CORNER);
+    textAlign(BASELINE);
     
   }
   

@@ -54,20 +54,17 @@ public class lobby {
     pushMatrix();
     translate(1000, 210, -2);
     box(32, 40, 6);
-    //if (screenX(0, 0, 0) > (width / 2) - 32 && screenX(0, 0, 0) < (width / 2) + 32 && screenY(0, 0, 0) > (height / 2) - 40 && screenY(0, 0, 0) < (height / 2) + 40) {
-      //hud.interactable();
-    //}
     hud.interactable(0, 0, 0, 32, 40);
     if (lightswitch) {
       ambient(0, 100, 0);
-      specular(0, 200, 0);
+      specular(0, 150, 0);
       rotateX(-PI/5);
     }
     else {
       specular(100, 0, 0);
       rotateX(PI/5);
     }
-    shininess(16.0);
+    shininess(4.0);
     box(8, 20, 8);
     ambient(0, 0, 0);
     popMatrix();

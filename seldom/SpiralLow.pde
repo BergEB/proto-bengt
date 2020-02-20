@@ -8,7 +8,6 @@ class SpiralLOW {
   }
   
   void display() {
-    lights();
     pushMatrix();
     if (s > 180) {
       s = 0;

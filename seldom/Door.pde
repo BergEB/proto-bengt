@@ -10,15 +10,14 @@ public class Door {
   }
   
   void display() {
+    
     if (Door) {
-      frame();
+      doorFrame();
       door();
     }
   }
   
-  void frame() {
-    //exhibits.display();
-    //defo.display();
+  void doorFrame() {
     if (stage == 1) {
       polyThree.display();
     }
@@ -72,7 +71,7 @@ public class Door {
   }
   
   void door() {
-    sphereDetail(50);
+    sphereDetail(30);
     pushMatrix();
     fill(177/2, 129/2, 95/2);
     translate(800, 220, 0);
@@ -103,6 +102,5 @@ public class Door {
       }
     }
     rotateX(A);
-    
   }
 }
