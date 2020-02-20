@@ -70,7 +70,7 @@ void draw() {
   background(0);
   noCursor();
   baseLighting();
-  pointLight(80, 50, 50, 1300, 300, 300);
+  //spotLight(191, 170, 133, viewX, viewY, viewZ, qCam.pan, qCam.tilt, -1, QUARTER_PI, 100);
   obj.display();
   h.display();
   l.display();
@@ -81,12 +81,12 @@ void draw() {
 }
 
 void baseLighting() {
-  shininess(1.0);
-  lightSpecular(100, 100, 100);
+  //shininess(1.0);
+  lightSpecular(64, 64, 64);
   //directionalLight(5, 5, 5, 0, 2, -1);
-  ambient(10, 10, 10);
-  emissive(5, 5, 5);
-  specular(25, 25, 25);
+  specular(0xfffff7d5);
+  spotLight(0, 255, 127, 800, 800, 800, 0, 1, 0, PI, 1000);
+  //specular(25, 25, 25);
 }
 
 

@@ -10,19 +10,13 @@ public class Objects {
   
   void display() {
     pushMatrix();
-    /*shininess(0.5);
-    lightSpecular(5, 5, 5);
-    ambient(2, 2, 2);
-    emissive(5, 5, 5);
-    specular(4, 4, 4);*/
-    textureMode(IMAGE);
-    textureWrap(CLAMP);
-    s.setTexture(texture);
-    baseLighting();
+    s.setSpecular(0xfffff7d5);
+    s.setTextureMode(NORMAL);
+    //s.setTexture(texture);
     translate(1400, 400, 200);
-    rotateX(PI);
-    rotateY(-HALF_PI);
-    shape(s, 0, 0);
+    s.rotateX(PI);
+    s.rotateY(-HALF_PI);
+    shape(s);
     popMatrix();
   }
 
