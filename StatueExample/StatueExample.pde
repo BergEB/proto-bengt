@@ -10,7 +10,7 @@ PShape pieta;
 void setup() {
   size(512, 512, P3D);
 
-  pieta = loadShape("pieta.obj");
+  pieta = loadShape("Alucy.obj");
   pieta.setFill(0xffffffff);
   pieta.setSpecular(0xfffff7d5);
 
@@ -50,6 +50,6 @@ void draw() {
   pieta.rotateY(.01);
 
   concentration = map(cos(frameCount * .01), -1, 1, 12, 100);
-  mouse.set(mouseX - half.x, mouseY - half.y, viewOff);
-  mouse.normalize();
+  //mouse.set(mouseX - half.x, mouseY - half.y, viewOff);
+  //mouse.normalize();
 }
