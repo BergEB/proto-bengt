@@ -29,7 +29,7 @@ class TriaFlow {
   void polygonFX(int n) {
     fill(0);
     stroke(200);
-    strokeWeight(2.0);
+    strokeWeight(1.5);
     polygon(0, 0, n, s);
   }
 }

@@ -1,7 +1,7 @@
 public class HUD {
   //private float cursorStroke;
   private int fadeIntensity;
-  boolean interactable;
+  public boolean interactable;
   boolean fadeStartSet;
   int fadeStart;
   
@@ -23,9 +23,6 @@ public class HUD {
       cursor3D();
     }*/
     fadeIn();
-    shapeMode(CORNER);
-    rectMode(CORNER);
-    textAlign(BASELINE);
     
   }
   
@@ -68,23 +65,7 @@ public class HUD {
     cam.endHUD();
   }
   
-  void interactable(double x1, double y1, double x2, double y2) {
-    if (mouseWithin(x1, y1, x2, y2) && !h.zooming) {
-      //hud.cursorStroke = 200;
-      //strokeWeight(1.5);
-      //noFill();
-    } else {
-      //hud.cursorStroke = 0;
-    }
-  }
   
-  void interactable(float targetX, float targetY, float targetZ, float boundsX, float boundsY) {
-    if (screenX(targetX, targetY, targetZ) > (width / 2) - boundsX && screenX(targetX, targetY, targetZ) < (width / 2) + boundsX && screenY(targetX, targetY, targetZ) > (height / 2) - boundsY && screenY(targetX, targetY, targetZ) < (height / 2) + boundsY) {
-      interactable =  true;
-    } else {
-      interactable = false;
-    }
-  }
   
   void movements() {
     if (!l.lightswitch && d.A < -(3*PI)/5 && !h.zooming) {

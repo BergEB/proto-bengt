@@ -54,7 +54,7 @@ public class lobby {
     pushMatrix();
     translate(1000, 210, -2);
     box(32, 40, 6);
-    hud.interactable(0, 0, 0, 32, 40);
+    interactable(0, 0, 0, 32, 40);
     if (lightswitch) {
       ambient(0, 100, 0);
       specular(0, 150, 0);

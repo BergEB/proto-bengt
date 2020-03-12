@@ -18,7 +18,7 @@ class WH {
       rotate(R * (200 - i));
       //polygonFX(pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1);
       stroke(200);
-      noFill();
+      fill(0);
       strokeWeight(2);
       ellipse(0, 0, pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1, pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1);
       popMatrix();

@@ -10,12 +10,13 @@
   
 //  void display() {
 //    pushMatrix();
+//    s.fill(0);
 //    s.setSpecular(0xfffff7d5);
 //    s.setTextureMode(NORMAL);
-//    //s.setTexture(texture);
+//    s.setTexture(texture);
 //    translate(1400, 400, 200);
 //    s.rotateX(PI);
-//    s.rotateY(-HALF_PI);
+//    s.rotateY(HALF_PI);
 //    shape(s);
 //    popMatrix();
 //  }

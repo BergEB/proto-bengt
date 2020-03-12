@@ -29,7 +29,6 @@ float viewX = 800;
 float viewY = 200;
 float viewZ = 800;
 boolean created;
-//Robot robot;
 
 void setup() {
   fullScreen(P3D);
@@ -52,9 +51,9 @@ void setup() {
   //obj = new Objects();
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   defo = new defoText();
-  t0.declare();
-  
   qCam = new QueasyCam(this);
+  
+  t0.declare();
   qCam.position.x = viewX;
   qCam.position.y = viewY;
   qCam.position.z = viewZ;
@@ -62,8 +61,8 @@ void setup() {
   qCam.sensitivity = 0.5;
   //qCam.speed = 0;  //enable for release build?
   perspective(PI/3, (float)width / height, 0.01f, 5000f); //last variable is view distance (increase if things get out of frame)
-  //hint(ENABLE_STROKE_PERSPECTIVE);
   //hint(DISABLE_OPENGL_ERRORS);  //enable for release build
+  //hint(ENABLE_STROKE_PERSPECTIVE);
 }
 
 void draw() {
@@ -78,36 +77,4 @@ void draw() {
   hud.display();
   
   println(millis() + "\t" + hud.fadeStart + "\t" + hud.fadeIntensity);
-}
-
-void baseLighting() {
-  //shininess(1.0);
-  lightSpecular(64, 64, 64);
-  directionalLight(50, 50, 50, 0, 2, -1);
-  specular(0xfffff7d5);
-  spotLight(0, 255, 127, 800, 800, 800, 0, 1, 0, PI, 1000);
-  specular(127, 127, 127);
-}
-
-
-void keyPressed() {
-  if (keyCode == SHIFT) {
-    keyHeld = true;
-  }
-}
-
-void keyReleased() {
-  if (keyCode == SHIFT) {
-    keyHeld = false;
-  }
-}
-
-  
-boolean mouseWithin(double x1, double y1, double x2, double y2) {
-  if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {
-    return true;
-  }
-  else {
-    return false;
-  }
 }
