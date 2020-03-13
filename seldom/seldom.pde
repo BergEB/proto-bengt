@@ -1,3 +1,16 @@
+import com.thomasdiewald.pixelflow.java.*;
+import com.thomasdiewald.pixelflow.java.accelerationstructures.*;
+import com.thomasdiewald.pixelflow.java.antialiasing.FXAA.*;
+import com.thomasdiewald.pixelflow.java.antialiasing.GBAA.*;
+import com.thomasdiewald.pixelflow.java.antialiasing.SMAA.*;
+import com.thomasdiewald.pixelflow.java.dwgl.*;
+import com.thomasdiewald.pixelflow.java.geometry.*;
+import com.thomasdiewald.pixelflow.java.imageprocessing.*;
+import com.thomasdiewald.pixelflow.java.imageprocessing.filter.*;
+import com.thomasdiewald.pixelflow.java.render.skylight.*;
+import com.thomasdiewald.pixelflow.java.rigid_origami.*;
+import com.thomasdiewald.pixelflow.java.sampling.*;
+import com.thomasdiewald.pixelflow.java.utils.*;
 import peasy.*;
 import queasycam.*;
 import java.awt.AWTException;
@@ -22,7 +35,7 @@ TriaFlow polySix;
 TriaFlow polySeven;
 SpiralLOW spiral;
 WH wormHole;
-//Objects obj;
+Objects obj;
 boolean keyHeld;
 PFont robotoThin;
 float viewX = 800;
@@ -48,7 +61,7 @@ void setup() {
   polySeven = new TriaFlow(7);
   spiral = new SpiralLOW();
   wormHole = new WH(40);
-  //obj = new Objects();
+  obj = new Objects();
   robotoThin = createFont("Roboto-Thin.ttf", 32);
   defo = new defoText();
   qCam = new QueasyCam(this);
@@ -70,11 +83,13 @@ void draw() {
   noCursor();
   baseLighting();
   //spotLight(191, 170, 133, viewX, viewY, viewZ, qCam.pan, qCam.tilt, -1, QUARTER_PI, 100);
-  //obj.display();
+  obj.display();
   h.display();
   l.display();
   d.display();
   hud.display();
   
   println(millis() + "\t" + hud.fadeStart + "\t" + hud.fadeIntensity);
+  String txt_fps = String.format(getClass().getName()+ " [fps %6.2f]", frameRate);
+  surface.setTitle(txt_fps);
 }
