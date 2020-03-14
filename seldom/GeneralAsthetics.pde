@@ -2,9 +2,9 @@ void baseLighting() {
   //shininess(1.0);
   lightSpecular(64, 64, 64);
   directionalLight(50, 50, 50, 0, 2, -1);
-  specular(0xfffff7d5);
+  //specular(0xfffff7d5);
   //spotLight(0, 255, 127, 800, 800, 800, 0, 1, 0, PI, 1000);
-  //specular(127, 127, 127);
+  specular(50, 50, 50);
 }
 
 void keyPressed() {
