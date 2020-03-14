@@ -68,9 +68,10 @@ void setup() {
 void draw() {
   background(0);
   noCursor();
-  baseLighting();
-  spotLight(191, 170, 133, viewX, viewY, viewZ, qCam.pan, qCam.tilt, -1, QUARTER_PI, 100);
+  noLights();
+  //spotLight(191, 170, 133, viewX, viewY, viewZ, qCam.pan, qCam.tilt, -1, QUARTER_PI, 100);
   obj.display();
+  baseLighting();
   h.display();
   l.display();
   d.display();

@@ -14,6 +14,7 @@ public class HUD {
   }
   
   void display() {
+    pushMatrix();
     movements();
     //cursor();
     cursor3D();
@@ -23,7 +24,8 @@ public class HUD {
       cursor3D();
     }*/
     fadeIn();
-    
+    popMatrix();
+    shapeMode(CORNER);
   }
   
   /*void cursor() {
