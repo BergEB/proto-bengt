@@ -11,6 +11,7 @@ class TriaFlow {
   
   void display() {
     pushMatrix();
+    noLights();
     translate(-150, -300, -1000);
     for (int i = 100; i > 0; i--) {
       pushMatrix();

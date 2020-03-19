@@ -1,10 +1,10 @@
 void baseLighting() {
-  //shininess(1.0);
+  shininess(1.0);
   lightSpecular(70, 70, 70);
-  directionalLight(127, 127, 150, 0, 2, -1);
-  specular(50, 50, 50);
-  emissive(20, 20, 20);
-  //ambient(10, 10, 10);
+  directionalLight(127, 127, 130, 0, 2, -1);
+  specular(100, 100, 100);
+  //emissive(20, 20, 20);
+  ambient(10, 10, 10);
   //spotLight(0, 255, 127, 800, 800, 800, 0, 1, 0, PI, 1000);
 }
 

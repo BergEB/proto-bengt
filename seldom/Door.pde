@@ -41,7 +41,6 @@ public class Door {
     }
     if (stage == 8) {
       wormHole.display();
-      hint(ENABLE_OPTIMIZED_STROKE);
     }
     shininess(1.0);
     lightSpecular(255, 255, 255);

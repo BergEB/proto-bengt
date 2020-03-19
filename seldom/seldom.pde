@@ -70,8 +70,8 @@ void draw() {
   noCursor();
   noLights();
   //spotLight(191, 170, 133, viewX, viewY, viewZ, qCam.pan, qCam.tilt, -1, QUARTER_PI, 100);
-  obj.display();
   baseLighting();
+  obj.display();
   h.display();
   l.display();
   d.display();
