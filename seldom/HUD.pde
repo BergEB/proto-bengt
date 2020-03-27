@@ -4,9 +4,11 @@ public class HUD {
   public boolean interactable;
   boolean fadeStartSet;
   int fadeStart;
+  PImage nextArrow;
   
   HUD() {
-    stage = 0;
+    nextArrow = loadImage("nextArrow.png");
+    stage = 1;
     fadeIntensity = 255;
     fadeStart = 0;
     fadeStartSet = false;
@@ -73,16 +75,13 @@ public class HUD {
     if (!l.lightswitch && d.A < -(3*PI)/5 && !h.zooming) {
       cam.beginHUD();
       pushMatrix();
-      translate(width/2, 300+height/2 );
+      translate(width/2, (300.0*((float)height/1080))+height/2);
       fill(50, 10, 10);
       shapeMode(CENTER);
       stroke(110, 5, 5);
-      rect(0, 0, 50, 50);
+      rect(0, 0, 50, 62);
       rectMode(CENTER);
-      textSize(48);
-      textAlign(CENTER, CENTER);
-      fill(255);
-      text("^", 0, 0, 100, 100);
+      image(nextArrow, -nextArrow.width/2, -nextArrow.height/2);
       popMatrix();
       cam.endHUD();
       if (keyPressed && (/*key == 'w' ||*/ keyCode == UP)) {

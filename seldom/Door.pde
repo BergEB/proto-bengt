@@ -37,11 +37,10 @@ public class Door {
       t0.display();
     }
     if (stage == 7) {
-      spiral.display();
-    }
-    if (stage == 8) {
       wormHole.display();
     }
+    //if (stage == 8) {
+    //}
     shininess(1.0);
     lightSpecular(255, 255, 255);
     directionalLight(50, 50, 50, 0, 2, -1);

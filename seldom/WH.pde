@@ -11,15 +11,18 @@ class WH {
   
   void display() {
     pushMatrix();
-    translate(-150, -300, -1000);
+    //translate(0, 0, -300);
+    translate(800, 200, -250);
+    rotateY(PI / 2);
+    translate(-800, -200, 250);
     for (int i = 400; i > 0; i--) {
       pushMatrix();
-      translate(width / 2, height / 2, -i * 1.25);
+      translate(800, 200, -i * 1.25);
       rotate(R * (200 - i));
       //polygonFX(pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1);
       stroke(200);
       fill(0);
-      strokeWeight(2);
+      strokeWeight(1);
       ellipse(0, 0, pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1, pow(1.125, (Math.abs(50 - (i / 4.0)))) + 1);
       popMatrix();
     }

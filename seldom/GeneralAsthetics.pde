@@ -7,19 +7,6 @@ void baseLighting() {
   ambient(10, 10, 10);
   //spotLight(0, 255, 127, 800, 800, 800, 0, 1, 0, PI, 1000);
 }
-
-void keyPressed() {
-  if (keyCode == SHIFT) {
-    keyHeld = true;
-  }
-}
-
-void keyReleased() {
-  if (keyCode == SHIFT) {
-    keyHeld = false;
-  }
-}
-
   
 boolean mouseWithin(double x1, double y1, double x2, double y2) {
   if (mouseX >= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2) {

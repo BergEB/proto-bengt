@@ -1,55 +1,70 @@
 class heightMapObject {
-  private float[][] terrain;
-  int scl = 8;
+  boolean keyHeldUP, keyHeldDOWN, keyHeldLEFT, keyHeldRIGHT;
+  float[][] terrain;
+  int scl = 10;
   int cols;
   int rows;
   int peakX;
   int peakY;
-  float r;
-  PImage heightmap;
-  int index(int x, int y) {
-  return x + y * heightmap.width;
-  }
+  float scale = 0.01;
+  float peakZ;
+  float yoff = 0;
+  float yoffBase = 0;
+  float xoff = 0;
+  float xoffBase = 0;
   
   heightMapObject() {
     cols = 800 / scl;
     rows = 800 / scl;
-    r = 0;
     terrain = new float[rows][cols];
-    heightmap = loadImage("heightmap.jpg");
-    heightmap.resize(800, 800);
   }
-    
+  
   void display() {
+    keyHeldUP = true;
+    keyHeldRIGHT = true;
+    keyHeld();
+    display0();
+  }
+  
+  void display0() {
+    noLights();
     pushMatrix();
-    noLights();  //have yet to test performance impact
-    translate(400, -100, -1000);
-    noStroke();
-    rotateX(PI / 4);
-    translate(400, 400, 0);
-    rotateZ(r);
-    translate(-400, -400, 0);
-    r+= PI / 800;
-    fill(0);
+    translate(400, 100, -1000);
+    rotateX(PI / 3);
+    strokeWeight(0.5);
+    yoff = yoffBase;
     for (int y = 0; y < cols - 1; y++) {
+      xoff = xoffBase;
       beginShape(TRIANGLE_STRIP);
       for (int x = 0; x < rows; x++) {
-        //fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 255);
         stroke(terrain[x][y], 0, 255 - terrain[x][y]);
+        //fill(terrain[x][y], 0, 255 - terrain[x][y]);
+        //noFill();
+        //noStroke();
+        fill(0);
         vertex(x * scl, y * scl, terrain[x][y]);        
         vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
+        xoff += 0.025;
       }
       endShape();
+      yoff += 0.025;
     }
     popMatrix();
   }
   
-  void declare() {
-    for (int y = 0; y < cols; y++) {
-      for (int x = 0; x < rows; x++) {
-        color pix = heightmap.pixels[index(x * scl, y * scl)];
-        terrain[x][y] = red(pix);
-      }
+  void keyHeld() {
+    if (keyHeldUP) {
+      yoffBase+=0.005;
+    }
+    if (keyHeldDOWN) {
+      yoffBase-=0.005;
+    }
+    if (keyHeldLEFT) {
+      xoffBase+=0.005;
+    }
+    if (keyHeldRIGHT) {
+      xoffBase-=0.005;
     }
   }
 }

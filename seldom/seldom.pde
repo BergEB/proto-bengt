@@ -31,7 +31,8 @@ float viewZ = 800;
 boolean created;
 
 void setup() {
-  fullScreen(P3D);
+  //fullScreen(P3D);
+  size(1000, 562, P3D);
   smooth(8);
   cam = new PeasyCam(this, viewX, viewY, viewZ, 100);
   cam.setActive(false);
@@ -53,14 +54,14 @@ void setup() {
   defo = new defoText();
   qCam = new QueasyCam(this);
   
-  t0.declare();
+  //t0.declare();
   qCam.position.x = viewX;
   qCam.position.y = viewY;
   qCam.position.z = viewZ;
   qCam.pan-= PI / 2;
   qCam.sensitivity = 0.5;
   //qCam.speed = 0;  //enable for release build?
-  perspective(PI/3, (float)width / height, 0.01f, 5000f); //last variable is view distance (increase if things get out of frame)
+  perspective(PI/3, (float)width / height, 0.01f, 3000f); //last variable is view distance (increase if things get out of frame)
   //hint(DISABLE_OPENGL_ERRORS);  //enable for release build
   //hint(ENABLE_STROKE_PERSPECTIVE);
 }
@@ -78,6 +79,6 @@ void draw() {
   hud.display();
   
   //println(millis() + "\t" + hud.fadeStart + "\t" + hud.fadeIntensity);
-  //String txt_fps = String.format(getClass().getName()+ " [fps %6.2f]", frameRate);
-  //surface.setTitle(txt_fps);
+  String txt_fps = String.format(getClass().getName()+ " [fps %6.2f]", frameRate);
+  surface.setTitle(txt_fps);
 }
