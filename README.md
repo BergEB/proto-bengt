@@ -58,8 +58,39 @@ void create() {
 
 ## *Built With*
 * [Processing](https://processing.org/) - *The IDE used.*
-* [PeasyCam](http://mrfeinberg.com/peasycam/) - *Lirary with methods beginHUD() & endHUD() used to draw natural 2-dimensional entities on top of a 3-dimensional (P3D) enviornment.*
+* [PeasyCam](http://mrfeinberg.com/peasycam/) - *Library with methods beginHUD() & endHUD() used to draw natural 2-dimensional entities on top of a 3-dimensional (P3D) enviornment.*
+* [QueasyCam](https://github.com/jrc03c/queasycam/) - *Library for a mouse-driven P3D first-person camera.*
 
 ## *Authors*
 * **Erik Bengt Berg** 
 * **Erik's brain**
+
+## *Recent Updates*
+~~ poly#s (TriaFlow) ~~
+ - fixed strokes
+ - added central rotation
+ - adjusted positioning to reduce stroke overdraw
+
+~~ heightMap ~~
+ - implemented procedural mapping
+ - optimized stroke weight for windowed useage
+ - disabled continuous rotation to better exemplify procedural drawing
+ - (old implementation is //'d in the heightmapcopy.pde file)
+
+~~ WormHole (WH) ~~
+ - fixed positioning and rotated 90 degrees
+ - has a better effect when advancing stages
+ - reduced stroke weight due to proximity
+
+~~ HUD ~~
+ - added custom arrow png instead of ^ text for stage advancement
+ - need to move stage variable somewhere else, it doesn't make sense to be housed in the hud class
+
+~~ General ~~
+ - reduced perspective render bounds from 5000f to 3000f (pointless)
+ - removed obselete keyPressed and keyReleased methods
+ - lighting is optimized for the statue
+ - changed starting stage to 1 instead of 0
+ - took lighting off of displayed attractions as to keep them in their original state
+ - removed stage 7's sprialLow construct
+ - moved WH from stage 8 to stage 7
