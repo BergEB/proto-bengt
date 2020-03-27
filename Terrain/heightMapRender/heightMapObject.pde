@@ -60,13 +60,13 @@ class heightMapObject {
     }*/
   }
   
-  void declare() { //for procedural drawing
-    for (int y = 0; y < cols; y++) {
-      for (int x = 0; x < rows; x++) {
-        terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 255);
-      }
-    }
-  }
+  //void declare() { //for procedural drawing
+  //  for (int y = 0; y < cols; y++) {
+  //    for (int x = 0; x < rows; x++) {
+  //      terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 255);
+  //    }
+  //  }
+  //}
   
   /*void declare() { //for reading from a pre-made image
     for (int y = 0; y < cols; y++) {
