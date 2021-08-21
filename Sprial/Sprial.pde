@@ -29,7 +29,7 @@ void draw() {
   }
   endShape();
   popMatrix();
-  p+= PI / 500;
+  p+= PI / 235;
   String txt_fps = String.format(getClass().getName()+ " [fps %6.2f]", frameRate);
   surface.setTitle(txt_fps);
 }

@@ -4,48 +4,44 @@ float rAcc;
 void setup() {
   size(1000, 1000, P3D);
   smooth(8);
-  frameRate(60);
+  frameRate(1000);
   R = 0;
-  rAcc = PI / 25000;
+  rAcc = PI / 10000;
 }
 
 void draw() {
   //rotateY(PI/2);
   background(0);
-  for (int i = 20; i > 0; i--) {
+  for (int i = 50; i > 0; i--) {
     pushMatrix();
-    translate(width / 2, height / 2, i * 30);
+    translate(width / 2, height / 2, -i * 20);
     rotateZ(R * ( -i));
-    polygonFX((i * 25) - 15);
+    polygonFX((i * 20) - 10);
     popMatrix();
   }
   println(R);
-  //R+= rAcc;
+  R+= rAcc;
   //if (R > 0.029 || R < -0.029) {
     //rAcc*= -1;
   //}
+  String txt_fps = String.format(getClass().getName()+ " [fps %6.2f]", frameRate);
+  surface.setTitle(txt_fps);
 }
 
-void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == RIGHT) {
-      R+= rAcc;
-    }
-    if (keyCode == LEFT) {
-      R-= rAcc;
-    }
-  }
-  if (key == 's' || key == 'S') {
-    save("thumbnail.jpg");
-  }
+void keyReleased() {
+  rAcc*= -1;
+}
+
+void mouseReleased() {
+  rAcc = 0;
 }
 
 
 void polygonFX(int n) {
-    //fill(0);
-    noFill();
+    fill(0);
+    //noFill();
     stroke(200);
-    strokeWeight(2);
+    strokeWeight(1);
     polygon(0, 0, n, 3);
   }
 
