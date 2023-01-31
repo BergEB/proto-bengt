@@ -8,7 +8,7 @@ public class HUD {
   
   HUD() {
     nextArrow = loadImage("nextArrow.png");
-    stage = 1;
+    stage = 6;
     fadeIntensity = 255;
     fadeStart = 0;
     fadeStartSet = false;
